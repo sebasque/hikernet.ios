@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CFD452A25C0E598009A94DE /* HikerNetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD452925C0E598009A94DE /* HikerNetApp.swift */; };
+		4CFD452C25C0E598009A94DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD452B25C0E598009A94DE /* ContentView.swift */; };
+		4CFD452E25C0E599009A94DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFD452D25C0E599009A94DE /* Assets.xcassets */; };
+		4CFD453125C0E599009A94DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFD453025C0E599009A94DE /* Preview Assets.xcassets */; };
+		4CFD453325C0E599009A94DE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD453225C0E599009A94DE /* Persistence.swift */; };
+		4CFD453625C0E599009A94DE /* HikerNet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD453425C0E599009A94DE /* HikerNet.xcdatamodeld */; };
+		4CFD454125C0E599009A94DE /* HikerNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD454025C0E599009A94DE /* HikerNetTests.swift */; };
+		4CFD454C25C0E599009A94DE /* HikerNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD454B25C0E599009A94DE /* HikerNetUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CFD453D25C0E599009A94DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CFD451E25C0E598009A94DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CFD452525C0E598009A94DE;
+			remoteInfo = HikerNet;
+		};
+		4CFD454825C0E599009A94DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CFD451E25C0E598009A94DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CFD452525C0E598009A94DE;
+			remoteInfo = HikerNet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4CFD452625C0E598009A94DE /* HikerNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HikerNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CFD452925C0E598009A94DE /* HikerNetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikerNetApp.swift; sourceTree = "<group>"; };
+		4CFD452B25C0E598009A94DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4CFD452D25C0E599009A94DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CFD453025C0E599009A94DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4CFD453225C0E599009A94DE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		4CFD453525C0E599009A94DE /* HikerNet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HikerNet.xcdatamodel; sourceTree = "<group>"; };
+		4CFD453725C0E599009A94DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CFD453C25C0E599009A94DE /* HikerNetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HikerNetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CFD454025C0E599009A94DE /* HikerNetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikerNetTests.swift; sourceTree = "<group>"; };
+		4CFD454225C0E599009A94DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CFD454725C0E599009A94DE /* HikerNetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HikerNetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CFD454B25C0E599009A94DE /* HikerNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikerNetUITests.swift; sourceTree = "<group>"; };
+		4CFD454D25C0E599009A94DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CFD452325C0E598009A94DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFD453925C0E599009A94DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFD454425C0E599009A94DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CFD451D25C0E598009A94DE = {
+			isa = PBXGroup;
+			children = (
+				4CFD452825C0E598009A94DE /* HikerNet */,
+				4CFD453F25C0E599009A94DE /* HikerNetTests */,
+				4CFD454A25C0E599009A94DE /* HikerNetUITests */,
+				4CFD452725C0E598009A94DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CFD452725C0E598009A94DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CFD452625C0E598009A94DE /* HikerNet.app */,
+				4CFD453C25C0E599009A94DE /* HikerNetTests.xctest */,
+				4CFD454725C0E599009A94DE /* HikerNetUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CFD452825C0E598009A94DE /* HikerNet */ = {
+			isa = PBXGroup;
+			children = (
+				4CFD452925C0E598009A94DE /* HikerNetApp.swift */,
+				4CFD452B25C0E598009A94DE /* ContentView.swift */,
+				4CFD452D25C0E599009A94DE /* Assets.xcassets */,
+				4CFD453225C0E599009A94DE /* Persistence.swift */,
+				4CFD453725C0E599009A94DE /* Info.plist */,
+				4CFD453425C0E599009A94DE /* HikerNet.xcdatamodeld */,
+				4CFD452F25C0E599009A94DE /* Preview Content */,
+			);
+			path = HikerNet;
+			sourceTree = "<group>";
+		};
+		4CFD452F25C0E599009A94DE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4CFD453025C0E599009A94DE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4CFD453F25C0E599009A94DE /* HikerNetTests */ = {
+			isa = PBXGroup;
+			children = (
+				4CFD454025C0E599009A94DE /* HikerNetTests.swift */,
+				4CFD454225C0E599009A94DE /* Info.plist */,
+			);
+			path = HikerNetTests;
+			sourceTree = "<group>";
+		};
+		4CFD454A25C0E599009A94DE /* HikerNetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4CFD454B25C0E599009A94DE /* HikerNetUITests.swift */,
+				4CFD454D25C0E599009A94DE /* Info.plist */,
+			);
+			path = HikerNetUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CFD452525C0E598009A94DE /* HikerNet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CFD455025C0E599009A94DE /* Build configuration list for PBXNativeTarget "HikerNet" */;
+			buildPhases = (
+				4CFD452225C0E598009A94DE /* Sources */,
+				4CFD452325C0E598009A94DE /* Frameworks */,
+				4CFD452425C0E598009A94DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HikerNet;
+			productName = HikerNet;
+			productReference = 4CFD452625C0E598009A94DE /* HikerNet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4CFD453B25C0E599009A94DE /* HikerNetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CFD455325C0E599009A94DE /* Build configuration list for PBXNativeTarget "HikerNetTests" */;
+			buildPhases = (
+				4CFD453825C0E599009A94DE /* Sources */,
+				4CFD453925C0E599009A94DE /* Frameworks */,
+				4CFD453A25C0E599009A94DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CFD453E25C0E599009A94DE /* PBXTargetDependency */,
+			);
+			name = HikerNetTests;
+			productName = HikerNetTests;
+			productReference = 4CFD453C25C0E599009A94DE /* HikerNetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4CFD454625C0E599009A94DE /* HikerNetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CFD455625C0E599009A94DE /* Build configuration list for PBXNativeTarget "HikerNetUITests" */;
+			buildPhases = (
+				4CFD454325C0E599009A94DE /* Sources */,
+				4CFD454425C0E599009A94DE /* Frameworks */,
+				4CFD454525C0E599009A94DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CFD454925C0E599009A94DE /* PBXTargetDependency */,
+			);
+			name = HikerNetUITests;
+			productName = HikerNetUITests;
+			productReference = 4CFD454725C0E599009A94DE /* HikerNetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CFD451E25C0E598009A94DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					4CFD452525C0E598009A94DE = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					4CFD453B25C0E599009A94DE = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 4CFD452525C0E598009A94DE;
+					};
+					4CFD454625C0E599009A94DE = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 4CFD452525C0E598009A94DE;
+					};
+				};
+			};
+			buildConfigurationList = 4CFD452125C0E598009A94DE /* Build configuration list for PBXProject "HikerNet" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CFD451D25C0E598009A94DE;
+			productRefGroup = 4CFD452725C0E598009A94DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CFD452525C0E598009A94DE /* HikerNet */,
+				4CFD453B25C0E599009A94DE /* HikerNetTests */,
+				4CFD454625C0E599009A94DE /* HikerNetUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CFD452425C0E598009A94DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CFD453125C0E599009A94DE /* Preview Assets.xcassets in Resources */,
+				4CFD452E25C0E599009A94DE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFD453A25C0E599009A94DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFD454525C0E599009A94DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CFD452225C0E598009A94DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CFD453325C0E599009A94DE /* Persistence.swift in Sources */,
+				4CFD452C25C0E598009A94DE /* ContentView.swift in Sources */,
+				4CFD452A25C0E598009A94DE /* HikerNetApp.swift in Sources */,
+				4CFD453625C0E599009A94DE /* HikerNet.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFD453825C0E599009A94DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CFD454125C0E599009A94DE /* HikerNetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFD454325C0E599009A94DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CFD454C25C0E599009A94DE /* HikerNetUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CFD453E25C0E599009A94DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CFD452525C0E598009A94DE /* HikerNet */;
+			targetProxy = 4CFD453D25C0E599009A94DE /* PBXContainerItemProxy */;
+		};
+		4CFD454925C0E599009A94DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CFD452525C0E598009A94DE /* HikerNet */;
+			targetProxy = 4CFD454825C0E599009A94DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4CFD454E25C0E599009A94DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4CFD454F25C0E599009A94DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CFD455125C0E599009A94DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HikerNet/Preview Content\"";
+				DEVELOPMENT_TEAM = HW2DL7UPC8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = HikerNet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelKoohang.HikerNet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4CFD455225C0E599009A94DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HikerNet/Preview Content\"";
+				DEVELOPMENT_TEAM = HW2DL7UPC8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = HikerNet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelKoohang.HikerNet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4CFD455425C0E599009A94DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HW2DL7UPC8;
+				INFOPLIST_FILE = HikerNetTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelKoohang.HikerNetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HikerNet.app/HikerNet";
+			};
+			name = Debug;
+		};
+		4CFD455525C0E599009A94DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HW2DL7UPC8;
+				INFOPLIST_FILE = HikerNetTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelKoohang.HikerNetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HikerNet.app/HikerNet";
+			};
+			name = Release;
+		};
+		4CFD455725C0E599009A94DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HW2DL7UPC8;
+				INFOPLIST_FILE = HikerNetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelKoohang.HikerNetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HikerNet;
+			};
+			name = Debug;
+		};
+		4CFD455825C0E599009A94DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HW2DL7UPC8;
+				INFOPLIST_FILE = HikerNetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelKoohang.HikerNetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HikerNet;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CFD452125C0E598009A94DE /* Build configuration list for PBXProject "HikerNet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CFD454E25C0E599009A94DE /* Debug */,
+				4CFD454F25C0E599009A94DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CFD455025C0E599009A94DE /* Build configuration list for PBXNativeTarget "HikerNet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CFD455125C0E599009A94DE /* Debug */,
+				4CFD455225C0E599009A94DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CFD455325C0E599009A94DE /* Build configuration list for PBXNativeTarget "HikerNetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CFD455425C0E599009A94DE /* Debug */,
+				4CFD455525C0E599009A94DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CFD455625C0E599009A94DE /* Build configuration list for PBXNativeTarget "HikerNetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CFD455725C0E599009A94DE /* Debug */,
+				4CFD455825C0E599009A94DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4CFD453425C0E599009A94DE /* HikerNet.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4CFD453525C0E599009A94DE /* HikerNet.xcdatamodel */,
+			);
+			currentVersion = 4CFD453525C0E599009A94DE /* HikerNet.xcdatamodel */;
+			path = HikerNet.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4CFD451E25C0E598009A94DE /* Project object */;
+}
