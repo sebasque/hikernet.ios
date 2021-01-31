@@ -1,0 +1,24 @@
+PODS:
+  - lottie-ios (3.1.6)
+  - Mapbox-iOS-SDK (6.3.0):
+    - MapboxMobileEvents (~> 0.10.4)
+  - MapboxMobileEvents (0.10.7)
+
+DEPENDENCIES:
+  - lottie-ios
+  - Mapbox-iOS-SDK (~> 6.3.0)
+
+SPEC REPOS:
+  trunk:
+    - lottie-ios
+    - Mapbox-iOS-SDK
+    - MapboxMobileEvents
+
+SPEC CHECKSUMS:
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
+  Mapbox-iOS-SDK: 2563ed87ead6ec08f1c2090873977b8a7be335a8
+  MapboxMobileEvents: d0a581dedd8f47411cc65ea520b965e83914316e
+
+PODFILE CHECKSUM: a505bcdd60acd0ca48fa28325bdddfd6e13add61
+
+COCOAPODS: 1.10.1

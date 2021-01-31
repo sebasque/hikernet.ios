@@ -15,6 +15,7 @@
 		4CFD453625C0E599009A94DE /* HikerNet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD453425C0E599009A94DE /* HikerNet.xcdatamodeld */; };
 		4CFD454125C0E599009A94DE /* HikerNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD454025C0E599009A94DE /* HikerNetTests.swift */; };
 		4CFD454C25C0E599009A94DE /* HikerNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD454B25C0E599009A94DE /* HikerNetUITests.swift */; };
+		8CD3F06B3DF69A8B5ADDB535 /* Pods_HikerNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C6A10F60AB7C41B20192B /* Pods_HikerNet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0913428C2DE0A6E1B2FA0326 /* Pods-HikerNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HikerNet.release.xcconfig"; path = "Target Support Files/Pods-HikerNet/Pods-HikerNet.release.xcconfig"; sourceTree = "<group>"; };
+		1F9C6A10F60AB7C41B20192B /* Pods_HikerNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HikerNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFD452625C0E598009A94DE /* HikerNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HikerNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFD452925C0E598009A94DE /* HikerNetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikerNetApp.swift; sourceTree = "<group>"; };
 		4CFD452B25C0E598009A94DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		4CFD454725C0E599009A94DE /* HikerNetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HikerNetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFD454B25C0E599009A94DE /* HikerNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikerNetUITests.swift; sourceTree = "<group>"; };
 		4CFD454D25C0E599009A94DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		799778A448875F5E17A10A9D /* Pods-HikerNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HikerNet.debug.xcconfig"; path = "Target Support Files/Pods-HikerNet/Pods-HikerNet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD3F06B3DF69A8B5ADDB535 /* Pods_HikerNet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +88,8 @@
 				4CFD453F25C0E599009A94DE /* HikerNetTests */,
 				4CFD454A25C0E599009A94DE /* HikerNetUITests */,
 				4CFD452725C0E598009A94DE /* Products */,
+				6A477C838B65CB8B800EFC5B /* Pods */,
+				C9E009F0B8C483303335F3B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +143,24 @@
 			path = HikerNetUITests;
 			sourceTree = "<group>";
 		};
+		6A477C838B65CB8B800EFC5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				799778A448875F5E17A10A9D /* Pods-HikerNet.debug.xcconfig */,
+				0913428C2DE0A6E1B2FA0326 /* Pods-HikerNet.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C9E009F0B8C483303335F3B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C6A10F60AB7C41B20192B /* Pods_HikerNet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CFD455025C0E599009A94DE /* Build configuration list for PBXNativeTarget "HikerNet" */;
 			buildPhases = (
+				8A089997B403BE88A651C9E1 /* [CP] Check Pods Manifest.lock */,
 				4CFD452225C0E598009A94DE /* Sources */,
 				4CFD452325C0E598009A94DE /* Frameworks */,
 				4CFD452425C0E598009A94DE /* Resources */,
+				ED4E92ED86FBDFF6EC912D5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,6 +286,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A089997B403BE88A651C9E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HikerNet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED4E92ED86FBDFF6EC912D5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HikerNet/Pods-HikerNet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HikerNet/Pods-HikerNet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HikerNet/Pods-HikerNet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4CFD452225C0E598009A94DE /* Sources */ = {
@@ -422,6 +491,7 @@
 		};
 		4CFD455125C0E599009A94DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 799778A448875F5E17A10A9D /* Pods-HikerNet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,6 +514,7 @@
 		};
 		4CFD455225C0E599009A94DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0913428C2DE0A6E1B2FA0326 /* Pods-HikerNet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
