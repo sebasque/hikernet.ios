@@ -3,10 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CD150D825C67FBB0096397E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD150D725C67FBB0096397E /* Constants.swift */; };
+		4CD150F825C689610096397E /* WorkSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150E625C689600096397E /* WorkSans-ExtraLight.ttf */; };
+		4CD150F925C689610096397E /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150E725C689600096397E /* WorkSans-Medium.ttf */; };
+		4CD150FA25C689610096397E /* WorkSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150E825C689600096397E /* WorkSans-SemiBoldItalic.ttf */; };
+		4CD150FB25C689610096397E /* WorkSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150E925C689600096397E /* WorkSans-Thin.ttf */; };
+		4CD150FC25C689610096397E /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150EA25C689600096397E /* WorkSans-Regular.ttf */; };
+		4CD150FD25C689610096397E /* WorkSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150EB25C689600096397E /* WorkSans-ExtraBoldItalic.ttf */; };
+		4CD150FE25C689610096397E /* WorkSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150EC25C689600096397E /* WorkSans-LightItalic.ttf */; };
+		4CD150FF25C689610096397E /* WorkSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150ED25C689610096397E /* WorkSans-ThinItalic.ttf */; };
+		4CD1510025C689610096397E /* WorkSans-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150EE25C689610096397E /* WorkSans-BlackItalic.ttf */; };
+		4CD1510125C689610096397E /* WorkSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150EF25C689610096397E /* WorkSans-BoldItalic.ttf */; };
+		4CD1510225C689610096397E /* WorkSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F025C689610096397E /* WorkSans-Italic.ttf */; };
+		4CD1510325C689610096397E /* WorkSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F125C689610096397E /* WorkSans-ExtraLightItalic.ttf */; };
+		4CD1510425C689610096397E /* WorkSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F225C689610096397E /* WorkSans-MediumItalic.ttf */; };
+		4CD1510525C689610096397E /* WorkSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F325C689610096397E /* WorkSans-Black.ttf */; };
+		4CD1510625C689610096397E /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F425C689610096397E /* WorkSans-Light.ttf */; };
+		4CD1510725C689610096397E /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F525C689610096397E /* WorkSans-Bold.ttf */; };
+		4CD1510825C689610096397E /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F625C689610096397E /* WorkSans-SemiBold.ttf */; };
+		4CD1510925C689610096397E /* WorkSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F725C689610096397E /* WorkSans-ExtraBold.ttf */; };
 		4CFD452A25C0E598009A94DE /* HikerNetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD452925C0E598009A94DE /* HikerNetApp.swift */; };
 		4CFD452C25C0E598009A94DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD452B25C0E598009A94DE /* ContentView.swift */; };
 		4CFD452E25C0E599009A94DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFD452D25C0E599009A94DE /* Assets.xcassets */; };
@@ -38,6 +57,25 @@
 /* Begin PBXFileReference section */
 		0913428C2DE0A6E1B2FA0326 /* Pods-HikerNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HikerNet.release.xcconfig"; path = "Target Support Files/Pods-HikerNet/Pods-HikerNet.release.xcconfig"; sourceTree = "<group>"; };
 		1F9C6A10F60AB7C41B20192B /* Pods_HikerNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HikerNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD150D725C67FBB0096397E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4CD150E625C689600096397E /* WorkSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		4CD150E725C689600096397E /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Medium.ttf"; sourceTree = "<group>"; };
+		4CD150E825C689600096397E /* WorkSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		4CD150E925C689600096397E /* WorkSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Thin.ttf"; sourceTree = "<group>"; };
+		4CD150EA25C689600096397E /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
+		4CD150EB25C689600096397E /* WorkSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		4CD150EC25C689600096397E /* WorkSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		4CD150ED25C689610096397E /* WorkSans-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-ThinItalic.ttf"; sourceTree = "<group>"; };
+		4CD150EE25C689610096397E /* WorkSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-BlackItalic.ttf"; sourceTree = "<group>"; };
+		4CD150EF25C689610096397E /* WorkSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		4CD150F025C689610096397E /* WorkSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Italic.ttf"; sourceTree = "<group>"; };
+		4CD150F125C689610096397E /* WorkSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		4CD150F225C689610096397E /* WorkSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		4CD150F325C689610096397E /* WorkSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Black.ttf"; sourceTree = "<group>"; };
+		4CD150F425C689610096397E /* WorkSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Light.ttf"; sourceTree = "<group>"; };
+		4CD150F525C689610096397E /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
+		4CD150F625C689610096397E /* WorkSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		4CD150F725C689610096397E /* WorkSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		4CFD452625C0E598009A94DE /* HikerNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HikerNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFD452925C0E598009A94DE /* HikerNetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikerNetApp.swift; sourceTree = "<group>"; };
 		4CFD452B25C0E598009A94DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +119,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C8A87B725C67A6F0048D570 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C8A87CE25C67C4B0048D570 /* Hikes */,
+				4C8A87CD25C67C3E0048D570 /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C8A87B825C67A750048D570 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CFD453425C0E599009A94DE /* HikerNet.xcdatamodeld */,
+				4CD150D725C67FBB0096397E /* Constants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C8A87CD25C67C3E0048D570 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		4C8A87CE25C67C4B0048D570 /* Hikes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Hikes;
+			sourceTree = "<group>";
+		};
+		4CD150E525C6890C0096397E /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4CD150F325C689610096397E /* WorkSans-Black.ttf */,
+				4CD150EE25C689610096397E /* WorkSans-BlackItalic.ttf */,
+				4CD150F525C689610096397E /* WorkSans-Bold.ttf */,
+				4CD150EF25C689610096397E /* WorkSans-BoldItalic.ttf */,
+				4CD150F725C689610096397E /* WorkSans-ExtraBold.ttf */,
+				4CD150EB25C689600096397E /* WorkSans-ExtraBoldItalic.ttf */,
+				4CD150E625C689600096397E /* WorkSans-ExtraLight.ttf */,
+				4CD150F125C689610096397E /* WorkSans-ExtraLightItalic.ttf */,
+				4CD150F025C689610096397E /* WorkSans-Italic.ttf */,
+				4CD150F425C689610096397E /* WorkSans-Light.ttf */,
+				4CD150EC25C689600096397E /* WorkSans-LightItalic.ttf */,
+				4CD150E725C689600096397E /* WorkSans-Medium.ttf */,
+				4CD150F225C689610096397E /* WorkSans-MediumItalic.ttf */,
+				4CD150EA25C689600096397E /* WorkSans-Regular.ttf */,
+				4CD150F625C689610096397E /* WorkSans-SemiBold.ttf */,
+				4CD150E825C689600096397E /* WorkSans-SemiBoldItalic.ttf */,
+				4CD150E925C689600096397E /* WorkSans-Thin.ttf */,
+				4CD150ED25C689610096397E /* WorkSans-ThinItalic.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		4CFD451D25C0E598009A94DE = {
 			isa = PBXGroup;
 			children = (
@@ -106,12 +201,14 @@
 		4CFD452825C0E598009A94DE /* HikerNet */ = {
 			isa = PBXGroup;
 			children = (
+				4CD150E525C6890C0096397E /* Font */,
+				4C8A87B825C67A750048D570 /* Model */,
+				4C8A87B725C67A6F0048D570 /* Views */,
 				4CFD452925C0E598009A94DE /* HikerNetApp.swift */,
 				4CFD452B25C0E598009A94DE /* ContentView.swift */,
 				4CFD452D25C0E599009A94DE /* Assets.xcassets */,
 				4CFD453225C0E599009A94DE /* Persistence.swift */,
 				4CFD453725C0E599009A94DE /* Info.plist */,
-				4CFD453425C0E599009A94DE /* HikerNet.xcdatamodeld */,
 				4CFD452F25C0E599009A94DE /* Preview Content */,
 			);
 			path = HikerNet;
@@ -149,7 +246,6 @@
 				799778A448875F5E17A10A9D /* Pods-HikerNet.debug.xcconfig */,
 				0913428C2DE0A6E1B2FA0326 /* Pods-HikerNet.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -266,8 +362,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD1510525C689610096397E /* WorkSans-Black.ttf in Resources */,
+				4CD1510825C689610096397E /* WorkSans-SemiBold.ttf in Resources */,
+				4CD150FD25C689610096397E /* WorkSans-ExtraBoldItalic.ttf in Resources */,
+				4CD1510425C689610096397E /* WorkSans-MediumItalic.ttf in Resources */,
 				4CFD453125C0E599009A94DE /* Preview Assets.xcassets in Resources */,
+				4CD150FA25C689610096397E /* WorkSans-SemiBoldItalic.ttf in Resources */,
+				4CD150FF25C689610096397E /* WorkSans-ThinItalic.ttf in Resources */,
+				4CD150FE25C689610096397E /* WorkSans-LightItalic.ttf in Resources */,
+				4CD1510925C689610096397E /* WorkSans-ExtraBold.ttf in Resources */,
+				4CD150F925C689610096397E /* WorkSans-Medium.ttf in Resources */,
+				4CD150FB25C689610096397E /* WorkSans-Thin.ttf in Resources */,
+				4CD1510125C689610096397E /* WorkSans-BoldItalic.ttf in Resources */,
+				4CD1510325C689610096397E /* WorkSans-ExtraLightItalic.ttf in Resources */,
+				4CD1510725C689610096397E /* WorkSans-Bold.ttf in Resources */,
+				4CD150F825C689610096397E /* WorkSans-ExtraLight.ttf in Resources */,
+				4CD1510025C689610096397E /* WorkSans-BlackItalic.ttf in Resources */,
+				4CD1510225C689610096397E /* WorkSans-Italic.ttf in Resources */,
 				4CFD452E25C0E599009A94DE /* Assets.xcassets in Resources */,
+				4CD1510625C689610096397E /* WorkSans-Light.ttf in Resources */,
+				4CD150FC25C689610096397E /* WorkSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +452,7 @@
 				4CFD452C25C0E598009A94DE /* ContentView.swift in Sources */,
 				4CFD452A25C0E598009A94DE /* HikerNetApp.swift in Sources */,
 				4CFD453625C0E599009A94DE /* HikerNet.xcdatamodeld in Sources */,
+				4CD150D825C67FBB0096397E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
