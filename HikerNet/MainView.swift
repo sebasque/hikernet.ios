@@ -13,7 +13,6 @@ struct MainView: View {
             OnboardingView(onboardingDone: $onboardingDone)
         }
     }
-
 }
 
 struct MainView_Previews: PreviewProvider {
