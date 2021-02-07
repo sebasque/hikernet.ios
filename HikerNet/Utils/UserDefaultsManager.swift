@@ -1,7 +1,6 @@
 
 import Foundation
 
-// MARK: Manager for handling reading and writing to UserDefaults
 struct UserDefaultsManager {
     static private let defaults = UserDefaults.standard
     static private let CARRIER_KEY = "carrier"

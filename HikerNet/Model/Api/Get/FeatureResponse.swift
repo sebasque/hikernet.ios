@@ -1,21 +1,23 @@
 
-import Foundation
-
-struct FeatureModel: Codable {
+struct FeatureResponse: Codable, Identifiable {
     
+    var id: Int
     var timestamp: String
-    var batteryLevel: Int16
+    var batteryLevel: Int
     var networkType: String
     var serviceState: String
-    var isConnected: Bool
-    var httpConnection: Bool
+    var isConnected: Int
+    var httpConnection: Int
     var lat: Double
     var lon: Double
     var accuracy: Double
     var speed: Double
+    var notes: String?
+    var hikeId: Int
     var detailedState: String
     
     enum CodingKeys: String, CodingKey {
+        case id
         case timestamp
         case batteryLevel = "battery_level"
         case serviceState = "service_state"
@@ -26,6 +28,8 @@ struct FeatureModel: Codable {
         case lon
         case accuracy
         case speed
+        case notes
+        case hikeId = "hike_id"
         case detailedState = "detailed_state"
     }
 }

@@ -5,7 +5,7 @@ import SwiftUI
 // MARK: App constants.
 struct Constants {
     static private let env = "test"
-    static let apiUrl = (env == "prod") ? "https://hikernet.rnoc.gatech.edu" : "https://163f255c018d.ngrok.io"
+    static let apiUrl = (env == "prod") ? "https://hikernet.rnoc.gatech.edu" : "https://2f1fe065fa5c.ngrok.io"
     
     struct Fonts {
         static let bold = "WorkSans-Bold"

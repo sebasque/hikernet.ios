@@ -24,7 +24,43 @@ extension Hike {
     @NSManaged public var manufacturer: String?
     @NSManaged public var osVersion: String?
     @NSManaged public var features: NSSet?
+    
+    public var wrappedDuration: Int64 {
+        duration
+    }
+    
+    public var wrappedDistance: Double {
+        distance
+    }
+    
+    public var wrappedStartTime: Date {
+        startTime ?? Date()
+    }
+    
+    public var wrappedEndTime: Date {
+        endTime ?? Date()
+    }
 
+    public var wrappedCarrier: String {
+        carrier ?? "Uknown Carrier"
+    }
+    
+    public var wrappedManufacturer: String {
+        manufacturer ?? "Uknown Manufacturer"
+    }
+    
+    public var wrappedOsVersion: String {
+        osVersion ?? "Uknown OS Version"
+    }
+    
+    public var featuresArray: [Feature] {
+        let set = features as? Set<Feature> ?? []
+        return set.sorted {
+            $0.wrappedTimestamp < $1.wrappedTimestamp
+        }
+    }
+    
+    
 }
 
 // MARK: Generated accessors for features

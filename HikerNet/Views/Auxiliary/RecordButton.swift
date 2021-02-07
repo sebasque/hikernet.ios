@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct RecordButton: View {
+    var title: String
+    var action: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: action) {
+            Text(title)
+                .foregroundColor(Constants.Colors.green)
+                .font(Font.custom(Constants.Fonts.semibold, size: 24))
+        }
+        .frame(width: 100, height: 100, alignment: .center)
+        .background(Color(UIColor.systemBackground))
+        .cornerRadius(30)
+        .shadow(radius: 5)
     }
 }
 
 struct RecordButton_Previews: PreviewProvider {
     static var previews: some View {
-        RecordButton()
+        RecordButton(title: "START", action: {return})
+            .previewLayout(.sizeThatFits)
     }
 }

@@ -18,7 +18,7 @@ struct OnboardingIdView: View {
             
             HStack {
                 HikerNetButton(title: "Get ID", disabled: idRetrieved) {
-                    ApiManager.getID { (id) in
+                    ApiManager.getId { (id) in
                         switch (id) {
                         case "server":
                             alertMessage = "There was problem with our servers. Please try again later."

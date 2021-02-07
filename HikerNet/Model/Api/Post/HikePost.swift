@@ -1,6 +1,5 @@
-import Foundation
 
-struct HikeModel: Codable {
+struct HikePost: Codable {
         
     var duration: Int
     var distance: Double
@@ -10,7 +9,7 @@ struct HikeModel: Codable {
     var manufacturer: String
     var osVersion: String
     var deviceId: String
-    var features: [FeatureModel]
+    var features: [FeaturePost]
     
     enum CodingKeys: String, CodingKey {
         case duration
