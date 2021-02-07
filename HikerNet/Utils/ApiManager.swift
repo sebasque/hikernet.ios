@@ -80,6 +80,8 @@ struct ApiManager {
                 return
             }.resume()
         }
+        
+        completion("empty")
     }
 
 }

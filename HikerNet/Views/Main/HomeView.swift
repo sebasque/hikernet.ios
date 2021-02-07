@@ -22,9 +22,6 @@ struct HomeView: View {
                 }
         }
         .accentColor(Constants.Colors.green)
-        .onAppear() {
-            ApiManager.postHikes { _ in }
-        }
     }
 }
 

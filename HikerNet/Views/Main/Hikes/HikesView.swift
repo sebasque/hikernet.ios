@@ -97,12 +97,18 @@ struct HikesView: View {
         .background(Color(UIColor.systemBackground))
         .onAppear() {
             downloading = true
-            ApiManager.getHikes { data in
-                hikes = data
-                calcTotalDistance()
-                calcTotalTime()
-                downloading = false
+            ApiManager.postHikes { result in
+                if result == "success" {
+                    DatabaseManager.clearCache()
+                }
+                ApiManager.getHikes { data in
+                    hikes = data
+                    calcTotalDistance()
+                    calcTotalTime()
+                    downloading = false
+                }
             }
+            
         }
     }
     

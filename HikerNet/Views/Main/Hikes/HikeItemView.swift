@@ -63,6 +63,10 @@ struct HikeItemView: View {
                 total += 1
             }
         }
-        return total / hike.features.count * 100
+        if hike.features.count > 0 {
+            return total / hike.features.count * 100
+        } else {
+            return 0
+        }
     }
 }

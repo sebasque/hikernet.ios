@@ -16,6 +16,7 @@
 		4C5EB20E25CF3DE20022CEDE /* HikeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB20D25CF3DE20022CEDE /* HikeCardView.swift */; };
 		4C5EB21D25CF71480022CEDE /* HikeConnectivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB21C25CF71480022CEDE /* HikeConnectivityView.swift */; };
 		4C5EB22225CF9B0C0022CEDE /* smores.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C5EB22125CF9B0C0022CEDE /* smores.json */; };
+		4C5EB23025CFA96F0022CEDE /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB22F25CFA96F0022CEDE /* SettingsButton.swift */; };
 		4C7905CF25CB450C00AC7E2D /* HikePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7905CE25CB450C00AC7E2D /* HikePost.swift */; };
 		4C7905D425CB451200AC7E2D /* FeaturePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7905D325CB451200AC7E2D /* FeaturePost.swift */; };
 		4C7905E225CB9DFA00AC7E2D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7905E125CB9DFA00AC7E2D /* DatabaseManager.swift */; };
@@ -94,6 +95,7 @@
 		4C5EB20D25CF3DE20022CEDE /* HikeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeCardView.swift; sourceTree = "<group>"; };
 		4C5EB21C25CF71480022CEDE /* HikeConnectivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeConnectivityView.swift; sourceTree = "<group>"; };
 		4C5EB22125CF9B0C0022CEDE /* smores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smores.json; sourceTree = "<group>"; };
+		4C5EB22F25CFA96F0022CEDE /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		4C7905CE25CB450C00AC7E2D /* HikePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikePost.swift; sourceTree = "<group>"; };
 		4C7905D325CB451200AC7E2D /* FeaturePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturePost.swift; sourceTree = "<group>"; };
 		4C7905E125CB9DFA00AC7E2D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				4CB2F11025C7B09100E93B38 /* SettingsView.swift */,
+				4C5EB22F25CFA96F0022CEDE /* SettingsButton.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				4C8EC54B25C885E90062C755 /* Feature+CoreDataProperties.swift in Sources */,
 				4CB2F0E325C786D200E93B38 /* HomeView.swift in Sources */,
 				4C8EC54825C885E90062C755 /* Hike+CoreDataClass.swift in Sources */,
+				4C5EB23025CFA96F0022CEDE /* SettingsButton.swift in Sources */,
 				4C7905D425CB451200AC7E2D /* FeaturePost.swift in Sources */,
 				4C5EB20125CF28E20022CEDE /* HikeDetailView.swift in Sources */,
 				4CB2F10425C7B07400E93B38 /* HikesView.swift in Sources */,
