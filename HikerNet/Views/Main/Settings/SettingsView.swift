@@ -33,6 +33,7 @@ struct SettingsView: View {
             }
             if cachedHikes.count > 0 {
                 SettingsButton(title: "\(cachedHikes.count) hike(s) cached", image: "square.and.arrow.down") {
+                    haptics.impactOccurred()
                     do {
                         let hikes = DatabaseManager.getHikes()
                         let jsonData = try JSONEncoder().encode(hikes)
