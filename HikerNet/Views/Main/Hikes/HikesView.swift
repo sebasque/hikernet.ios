@@ -61,7 +61,7 @@ struct HikesView: View {
                                 ForEach(hikes) { hike in
                                     NavigationLink(destination: HikeDetailView(hike: hike)) {
                                         HikeItemView(hike: hike)
-                                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                                            .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
                                     }
                                 }
                             }
