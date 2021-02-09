@@ -19,7 +19,7 @@ struct ApiManager {
         URLSession.shared.dataTask(with: request) { data, _, _ in
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode(IdResponse.self, from: data) {
-                    completion(decodedResponse.key)
+                    completion(decodedResponse.id)
                     return
                 } else {
                     completion("server")

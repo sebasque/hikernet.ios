@@ -8,10 +8,10 @@ struct HikeItemView: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(TimeFormatter.getLocalDateString(time: hike.startTime))
+                    Text(TimeFormatter.getLocalDateString(time: hike.start))
                         .foregroundColor(.secondary)
                         .font(Font.custom(Constants.Fonts.regular, size: 14))
-                    Text(TimeFormatter.getDayDescription(date: TimeFormatter.getLocalDate(time: hike.startTime)))
+                    Text(TimeFormatter.getDayDescription(date: TimeFormatter.getLocalDate(time: hike.start)))
                         .foregroundColor(.primary)
                         .font(Font.custom(Constants.Fonts.regular, size: 14))
                 }
@@ -59,7 +59,7 @@ struct HikeItemView: View {
     private func calcConnectivity() -> Int {
         var total = 0
         for feature in hike.features {
-            if feature.serviceState == "IN_SERVICE" {
+            if feature.service == 1 {
                 total += 1
             }
         }

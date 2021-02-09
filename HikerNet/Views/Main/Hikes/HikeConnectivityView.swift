@@ -33,7 +33,7 @@ struct HikeConnectivityView: View {
         for hike in hikes {
             for feature in hike.features {
                 featureCount += 1
-                if feature.serviceState == "IN_SERVICE" {
+                if feature.service == 1 {
                     connectedPercentage += 1
                 }
             }

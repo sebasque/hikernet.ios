@@ -36,10 +36,10 @@ struct HikeCardView: View {
                     )
                 ScrollView {
                     VStack(alignment: .leading) {
-                        Text(TimeFormatter.getLocalDateString(time: hike.startTime))
+                        Text(TimeFormatter.getLocalDateString(time: hike.start))
                             .foregroundColor(.secondary)
                             .font(Font.custom(Constants.Fonts.regular, size: 17))
-                        Text(TimeFormatter.getDayDescription(date: TimeFormatter.getLocalDate(time: hike.startTime)))
+                        Text(TimeFormatter.getDayDescription(date: TimeFormatter.getLocalDate(time: hike.start)))
                             .foregroundColor(.primary)
                             .font(Font.custom(Constants.Fonts.medium, size: 24))
                         

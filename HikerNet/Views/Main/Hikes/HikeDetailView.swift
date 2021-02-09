@@ -39,7 +39,7 @@ struct HikeDetailView: View {
     private func makeAnnotations() {
         for feature in hike.features {
             annotations.append(
-                MGLPointAnnotation(title: feature.serviceState, coordinate: CLLocationCoordinate2D(latitude: feature.lon, longitude: feature.lat))
+                MGLPointAnnotation(title: "\(feature.service)", coordinate: CLLocationCoordinate2D(latitude: feature.lon, longitude: feature.lat))
             )
         }
     }

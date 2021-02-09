@@ -17,7 +17,7 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
     var currentLocation = CLLocation()
     var locationPoints = [CLLocation]()
     var firstLocationRequest = true
-    var cellularConnected = false
+    var connected = false
     var batteryLevel = 0
 
     @Published var startTime = Date()
@@ -36,7 +36,7 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
         NotificationCenter.default.addObserver(self, selector: #selector(batterLevelDidChange), name: UIDevice.batteryLevelDidChangeNotification, object: nil)
         
         networkMonitor.pathUpdateHandler = { path in
-            self.cellularConnected = path.status == .satisfied
+            self.connected = path.status == .satisfied
         }
         networkMonitor.start(queue: queue)
     }
@@ -82,14 +82,14 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
     func startHike() {
         startTime = Date()
         batteryLevel = Int(UIDevice.current.batteryLevel * 100)
-        cellularConnected = networkMonitor.currentPath.status == .satisfied
+        connected = networkMonitor.currentPath.status == .satisfied
         
         let entity = NSEntityDescription.entity(forEntityName: "Hike", in: managedContext)!
         hike = Hike(entity: entity, insertInto: managedContext)
-        hike!.setValue(startTime, forKey: "startTime")
+        hike!.setValue(startTime, forKey: "start")
         hike!.setValue(UserDefaultsManager.getCarrier(), forKey: "carrier")
         hike!.setValue("Apple", forKey: "manufacturer")
-        hike!.setValue(UIDevice.current.systemVersion, forKey: "osVersion")
+        hike!.setValue(UIDevice.current.systemVersion, forKey: "os")
         
         do {
             try managedContext.save()
@@ -113,10 +113,10 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     private func updateHike() {
         let endTime = Date()
-        let timeElapsed = (endTime.timeIntervalSince1970 - hike!.startTime!.timeIntervalSince1970).rounded()
+        let timeElapsed = (endTime.timeIntervalSince1970 - hike!.start!.timeIntervalSince1970).rounded()
         hike!.setValue(Int64(timeElapsed), forKey: "duration")
         hike!.setValue(distance/1000, forKey: "distance")
-        hike!.setValue(endTime, forKey: "endTime")
+        hike!.setValue(endTime, forKey: "end")
         saveContext()
     }
     
@@ -128,8 +128,8 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
         
         feature.setValue(Date(), forKey: "timestamp")
         feature.setValue(Int16(batteryLevel), forKey: "battery")
-        feature.setValue(getNetworkType(), forKey: "networkType")
-        feature.setValue(inService, forKey: "inService")
+        feature.setValue(getNetworkType(), forKey: "network")
+        feature.setValue(inService, forKey: "service")
         feature.setValue(currentLocation.coordinate.latitude, forKey: "lon")
         feature.setValue(currentLocation.coordinate.longitude, forKey: "lat")
         feature.setValue(currentLocation.horizontalAccuracy, forKey: "accuracy")
@@ -137,43 +137,13 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
         feature.setValue(hike, forKey: "origin")
         
         if inService {
-            feature.setValue(cellularConnected, forKey: "connected")
-            if cellularConnected {
-                guard let url = URL(string: "https://www.google.com") else {
-                    return
-                }
-                var request = URLRequest(url: url)
-                request.httpMethod = "GET"
-                request.allowsCellularAccess = true
-                request.allowsConstrainedNetworkAccess = true
-                request.allowsExpensiveNetworkAccess = true
-                request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-                request.timeoutInterval = 10
-                
-                URLSession.shared.dataTask(with: request) { _, response, error in
-                    if let httpResponse = response as? HTTPURLResponse {
-                        if httpResponse.statusCode == 200 {
-                            feature.setValue(true, forKey: "httpConnection")
-                        } else {
-                            feature.setValue(false, forKey: "httpConnection")
-                        }
-                    }
-                    DispatchQueue.main.async {
-                        self.saveInProgress = false
-                    }
-                    self.saveContext()
-                }.resume()
-            } else {
-                feature.setValue(false, forKey: "httpConnection")
-                saveInProgress = false
-                saveContext()
-            }
+            feature.setValue(connected, forKey: "connected")
         } else {
             feature.setValue(false, forKey: "connected")
-            feature.setValue(false, forKey: "httpConnection")
-            saveInProgress = false
-            saveContext()
         }
+        
+        saveContext()
+        saveInProgress = false
     }
     
     private func updateServiceState() {
@@ -245,21 +215,20 @@ extension MeasureService {
             print("Carrier\t\t\t\t \(hike.carrier)")
             print("Duration\t\t\t \(hike.duration) seconds")
             print("Distance\t\t\t \(hike.distance) km")
-            print("Start Time\t\t\t \(hike.startTime)")
-            print("End Time\t\t\t \(hike.endTime)")
+            print("Start Time\t\t\t \(hike.start)")
+            print("End Time\t\t\t \(hike.end)")
             print("Manufacturer\t\t \(hike.manufacturer)")
-            print("OS Version\t\t\t \(hike.osVersion)")
+            print("OS Version\t\t\t \(hike.os)")
             print()
             hikeCounter += 1
             for feature in hike.features {
                 print("Feature #\(featureCounter)")
                 print("--------------------")
                 print("Timestamp\t\t\t \(feature.timestamp)")
-                print("Battery\t\t\t\t \(feature.batteryLevel) %")
-                print("Network Type\t\t \(feature.networkType)")
-                print("Service State\t\t \(feature.serviceState)")
-                print("Connected\t\t\t \(feature.isConnected)")
-                print("HTTP Connection\t\t \(feature.httpConnection)")
+                print("Battery\t\t\t\t \(feature.battery) %")
+                print("Network Type\t\t \(feature.network)")
+                print("Service State\t\t \(feature.service)")
+                print("Connected\t\t\t \(feature.connected)")
                 print("Latitude\t\t\t \(feature.lat)")
                 print("Longitude\t\t\t \(feature.lon)")
                 print("Speed\t\t\t\t \(feature.speed) m/s")

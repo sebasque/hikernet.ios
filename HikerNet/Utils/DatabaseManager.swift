@@ -15,11 +15,11 @@ struct DatabaseManager {
                 var newHike = HikePost(
                     duration: Int(hike.wrappedDuration),
                     distance: hike.wrappedDistance,
-                    startTime: isoFormatter.string(from: hike.wrappedStartTime),
-                    endTime: isoFormatter.string(from: hike.wrappedEndTime),
+                    start: isoFormatter.string(from: hike.wrappedStart),
+                    end: isoFormatter.string(from: hike.wrappedEnd),
                     carrier: hike.wrappedCarrier,
                     manufacturer: hike.wrappedManufacturer,
-                    osVersion: hike.wrappedOsVersion,
+                    os: hike.wrappedOs,
                     deviceId: UserDefaultsManager.getId(),
                     features: []
                 )
@@ -27,16 +27,14 @@ struct DatabaseManager {
                 for feature in hike.featuresArray {
                     let newFeature = FeaturePost(
                         timestamp: isoFormatter.string(from: feature.wrappedTimestamp),
-                        batteryLevel: feature.battery,
-                        networkType: feature.wrappedNetworkType,
-                        serviceState: feature.wrappedInService ? "IN_SERVICE" : "OUT_OF_SERVICE",
-                        isConnected: feature.wrappedConnected,
-                        httpConnection: feature.wrappedHttpConnection,
+                        battery: feature.battery,
+                        network: feature.wrappedNetwork,
+                        service: feature.wrappedService,
+                        connected: feature.wrappedConnected,
                         lat: feature.wrappedLat,
                         lon: feature.wrappedLon,
                         accuracy: feature.wrappedAccuracy,
-                        speed: feature.wrappedSpeed,
-                        detailedState: "null"
+                        speed: feature.wrappedSpeed
                     )
                     features.append(newFeature)
                 }

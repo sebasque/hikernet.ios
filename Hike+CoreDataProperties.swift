@@ -2,7 +2,7 @@
 //  Hike+CoreDataProperties.swift
 //  HikerNet
 //
-//  Created by Michael Koohang on 2/1/21.
+//  Created by Michael Koohang on 2/9/21.
 //
 //
 
@@ -18,11 +18,11 @@ extension Hike {
 
     @NSManaged public var duration: Int64
     @NSManaged public var distance: Double
-    @NSManaged public var startTime: Date?
-    @NSManaged public var endTime: Date?
+    @NSManaged public var start: Date?
+    @NSManaged public var end: Date?
     @NSManaged public var carrier: String?
     @NSManaged public var manufacturer: String?
-    @NSManaged public var osVersion: String?
+    @NSManaged public var os: String?
     @NSManaged public var features: NSSet?
     
     public var wrappedDuration: Int64 {
@@ -33,12 +33,12 @@ extension Hike {
         distance
     }
     
-    public var wrappedStartTime: Date {
-        startTime ?? Date()
+    public var wrappedStart: Date {
+        start ?? Date()
     }
     
-    public var wrappedEndTime: Date {
-        endTime ?? Date()
+    public var wrappedEnd: Date {
+        end ?? Date()
     }
 
     public var wrappedCarrier: String {
@@ -49,8 +49,8 @@ extension Hike {
         manufacturer ?? "Uknown Manufacturer"
     }
     
-    public var wrappedOsVersion: String {
-        osVersion ?? "Uknown OS Version"
+    public var wrappedOs: String {
+        os ?? "Uknown OS"
     }
     
     public var featuresArray: [Feature] {
@@ -59,8 +59,7 @@ extension Hike {
             $0.wrappedTimestamp < $1.wrappedTimestamp
         }
     }
-    
-    
+
 }
 
 // MARK: Generated accessors for features

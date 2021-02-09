@@ -1,4 +1,4 @@
 
 struct IdResponse: Codable {
-    var key: String
+    var id: String
 }

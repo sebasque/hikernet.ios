@@ -53,7 +53,7 @@ struct HikeMapView: UIViewRepresentable {
             if annotationView == nil {
                 annotationView = CustomAnnotationView(reuseIdentifier: reuseIdentifier)
                 annotationView!.bounds = CGRect(x: 0, y: 0, width: 15, height: 15)
-                annotationView!.backgroundColor = annotation.title == "IN_SERVICE" ? UIColor(Constants.Colors.green) : UIColor.systemRed
+                annotationView!.backgroundColor = annotation.title == "1" ? UIColor(Constants.Colors.green) : UIColor.systemRed
             }
             return annotationView
         }

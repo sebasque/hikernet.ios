@@ -2,7 +2,7 @@
 //  Feature+CoreDataProperties.swift
 //  HikerNet
 //
-//  Created by Michael Koohang on 2/5/21.
+//  Created by Michael Koohang on 2/9/21.
 //
 //
 
@@ -16,16 +16,15 @@ extension Feature {
         return NSFetchRequest<Feature>(entityName: "Feature")
     }
 
-    @NSManaged public var timestamp: Date?
+    @NSManaged public var accuracy: Double
     @NSManaged public var battery: Int16
-    @NSManaged public var networkType: String?
-    @NSManaged public var inService: Bool
     @NSManaged public var connected: Bool
-    @NSManaged public var httpConnection: Bool
+    @NSManaged public var service: Bool
     @NSManaged public var lat: Double
     @NSManaged public var lon: Double
+    @NSManaged public var network: String?
     @NSManaged public var speed: Double
-    @NSManaged public var accuracy: Double
+    @NSManaged public var timestamp: Date?
     @NSManaged public var origin: Hike?
     
     var wrappedTimestamp: Date {
@@ -36,20 +35,16 @@ extension Feature {
         battery
     }
     
-    var wrappedNetworkType: String {
-        networkType ?? "Uknown Network Type"
+    var wrappedNetwork: String {
+        network ?? "Uknown Network"
     }
     
-    var wrappedInService: Bool {
-        inService
+    var wrappedService: Bool {
+        service
     }
     
     var wrappedConnected: Bool {
         connected
-    }
-    
-    var wrappedHttpConnection: Bool {
-        httpConnection
     }
     
     var wrappedLat: Double {
