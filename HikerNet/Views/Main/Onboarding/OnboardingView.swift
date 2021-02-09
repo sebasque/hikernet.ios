@@ -56,7 +56,6 @@ struct OnboardingView: View {
                             currentIndex += 1
                             buttonTitle = "DONE"
                         case 4:
-                            UserDefaultsManager.setOnboardingDone(done: true)
                             onboardingDone = true
                         default:
                             break

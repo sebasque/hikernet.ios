@@ -3,9 +3,12 @@ import SwiftUI
 
 struct OnboardingIdView: View {
     @Binding var idRetrieved: Bool
-    @State var showingAlert: Bool = false
-    @State var alertMessage: String = ""
-    
+    @State private var showingAlert: Bool = false
+    @State private var alertMessage: String = ""
+    @State private var notificationTitle: String = "Your carrier: "
+    @State private var showNotification: Bool = false
+    let haptics = UIImpactFeedbackGenerator(style: .medium)
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Your ID")
@@ -18,6 +21,7 @@ struct OnboardingIdView: View {
             
             HStack {
                 HikerNetButton(title: "Get ID", disabled: idRetrieved) {
+                    haptics.impactOccurred()
                     ApiManager.getId { (id) in
                         switch (id) {
                         case "server":
@@ -27,7 +31,13 @@ struct OnboardingIdView: View {
                             alertMessage = "You don't seem to have an internet connection. Please try again later."
                             showingAlert = true
                         default:
+                            notificationTitle = "Your ID: \(id)"
+                            withAnimation { showNotification = true }
+                            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+                                withAnimation { showNotification = false }
+                            }
                             UserDefaultsManager.setId(id: id)
+                            UserDefaultsManager.setOnboardingDone(done: true)
                             idRetrieved = true
                         }
                     }
@@ -42,6 +52,17 @@ struct OnboardingIdView: View {
             }
             
             Spacer()
+            VStack() {
+                Text(notificationTitle)
+                    .padding()
+                    .frame(maxHeight: 50)
+                    .background(Color(UIColor.systemGray6))
+                    .multilineTextAlignment(.center)
+                    .cornerRadius(25)
+                    .animation(.easeInOut)
+                    .transition(.opacity)
+                    .opacity(showNotification ? 1 : 0)
+            }.frame(maxWidth: .infinity, alignment: .center)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .padding(EdgeInsets(top: 24, leading: 36, bottom: 0, trailing: 36))
