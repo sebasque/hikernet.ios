@@ -20,7 +20,6 @@ struct DatabaseManager {
                     carrier: hike.wrappedCarrier,
                     manufacturer: hike.wrappedManufacturer,
                     os: hike.wrappedOs,
-                    deviceId: UserDefaultsManager.getId(),
                     features: []
                 )
                 var features = [FeaturePost]()

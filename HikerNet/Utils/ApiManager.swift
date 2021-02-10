@@ -68,7 +68,8 @@ struct ApiManager {
             request.httpMethod = "POST"
             request.httpBody = jsonData
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            
+            request.setValue(UserDefaultsManager.getId(), forHTTPHeaderField: "device-id")
+
             URLSession.shared.dataTask(with: request) { _, response, error in
                 if let httpResponse = response as? HTTPURLResponse {
                     if httpResponse.statusCode == 200 {

@@ -8,7 +8,6 @@ struct HikePost: Codable {
     var carrier: String
     var manufacturer: String
     var os: String
-    var deviceId: String
     var features: [FeaturePost]
     
     enum CodingKeys: String, CodingKey {
@@ -19,7 +18,6 @@ struct HikePost: Codable {
         case carrier
         case manufacturer
         case os
-        case deviceId = "device_id"
         case features
     }
 }
