@@ -63,10 +63,8 @@ struct TimeFormatter {
             return "Morning"
         } else if hour < 18 {
             return "Afternoon"
-        } else if hour < 24 {
-            return "Evening"
         } else {
-            return ""
+            return "Evening"
         }
     }
 }
