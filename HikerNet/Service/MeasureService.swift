@@ -179,20 +179,20 @@ extension MeasureService {
         if radioTech.count > 0 {
             for (_, val) in radioTech {
                 switch(val) {
-                    case CTRadioAccessTechnologyLTE: return "LTE"
-                    case CTRadioAccessTechnologyGPRS: return "GPRS"
-                    case CTRadioAccessTechnologyCDMA1x: return "1xRTT"
-                    case CTRadioAccessTechnologyEdge: return "EDGE"
-                    case CTRadioAccessTechnologyWCDMA: return "WCDMA"
-                    case CTRadioAccessTechnologyHSDPA: return "HSDPA"
-                    case CTRadioAccessTechnologyHSUPA: return "HSUPA"
-                    case CTRadioAccessTechnologyCDMAEVDORev0: return "EVDO_REV_0"
-                    case CTRadioAccessTechnologyCDMAEVDORevA: return "EVDO_REV_A"
-                    case CTRadioAccessTechnologyCDMAEVDORevB: return "EVDO_REV_B"
-                    case CTRadioAccessTechnologyeHRPD: return "EHRPD"
-                    case CTRadioAccessTechnologyNRNSA: return "NEW_RADIO_5G_NON_STANDALONE"
-                    case CTRadioAccessTechnologyNR: return "NEW_RADIO_5G"
-                    default: return "UNKNOWN"
+                case CTRadioAccessTechnologyLTE: return Constants.RadioTech.LTE
+                case CTRadioAccessTechnologyGPRS: return Constants.RadioTech.GPRS
+                case CTRadioAccessTechnologyCDMA1x: return Constants.RadioTech.CDMA1x
+                case CTRadioAccessTechnologyEdge: return Constants.RadioTech.EDGE
+                case CTRadioAccessTechnologyWCDMA: return Constants.RadioTech.WCDMA
+                case CTRadioAccessTechnologyHSDPA: return Constants.RadioTech.HSDPA
+                case CTRadioAccessTechnologyHSUPA: return Constants.RadioTech.HSUPA
+                case CTRadioAccessTechnologyCDMAEVDORev0: return Constants.RadioTech.CDMAEVDOREV0
+                case CTRadioAccessTechnologyCDMAEVDORevA: return Constants.RadioTech.CDMAEVDOREVA
+                case CTRadioAccessTechnologyCDMAEVDORevB: return Constants.RadioTech.CDMAEVDOREVB
+                case CTRadioAccessTechnologyeHRPD: return Constants.RadioTech.EHRPD
+                case CTRadioAccessTechnologyNRNSA: return Constants.RadioTech.NRNSA
+                case CTRadioAccessTechnologyNR: return Constants.RadioTech.NR
+                default: return Constants.RadioTech.UKNOWN
                 }
             }
         }
