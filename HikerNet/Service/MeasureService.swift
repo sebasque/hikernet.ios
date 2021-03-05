@@ -91,11 +91,7 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
         hike!.setValue("Apple", forKey: "manufacturer")
         hike!.setValue(UIDevice.current.systemVersion, forKey: "os")
         
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
+        saveContext()
     }
     
     func stopHike() {
@@ -133,17 +129,12 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
         feature.setValue(Int16(batteryLevel), forKey: "battery")
         feature.setValue(getNetworkType(), forKey: "network")
         feature.setValue(inService, forKey: "service")
+        feature.setValue(inService ? connected : false, forKey: "connected")
         feature.setValue(currentLocation.coordinate.latitude, forKey: "lon")
         feature.setValue(currentLocation.coordinate.longitude, forKey: "lat")
         feature.setValue(currentLocation.horizontalAccuracy, forKey: "accuracy")
         feature.setValue(currentLocation.speed, forKey: "speed")
         feature.setValue(hike, forKey: "origin")
-        
-        if inService {
-            feature.setValue(connected, forKey: "connected")
-        } else {
-            feature.setValue(false, forKey: "connected")
-        }
         
         saveContext()
         saveInProgress = false
