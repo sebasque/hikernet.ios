@@ -3,12 +3,22 @@ import Foundation
 import SwiftUI
 import CoreData
 
+enum ApiError: Error {
+    case RequestError
+    case ServerError
+    case ConnectionError
+}
+
+enum ApiMessage {
+    case Success
+}
+
 // MARK: Manager for making API requests to the HikerNet server
 struct ApiManager {
     static private let API_URL = "\(Constants.apiUrl)/api"
     
     // Get ID from the server
-    static func getId(completion: @escaping (String) -> ()) {
+    static func getId(completion: @escaping (Result<String, ApiError>) -> ()) {
         guard let url = URL(string: "\(API_URL)/auth/register") else {
             return
         }
@@ -19,21 +29,19 @@ struct ApiManager {
         URLSession.shared.dataTask(with: request) { data, _, _ in
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode(IdResponse.self, from: data) {
-                    completion(decodedResponse.id)
-                    return
-                } else {
-                    completion("server")
+                    completion(.success(decodedResponse.id))
                     return
                 }
-            } else {
-                completion("connection")
+                completion(.failure(.ServerError))
                 return
             }
+            completion(.failure(.ConnectionError))
+            return
         }.resume()
     }
     
     // Get hikes from the server
-    static func getHikes(completion: @escaping ([HikeResponse]) -> ()) {
+    static func getHikes(completion: @escaping (Result<[HikeResponse], ApiError>) -> ()) {
         guard let url = URL(string: "\(API_URL)/hikes") else {
             return
         }
@@ -45,17 +53,19 @@ struct ApiManager {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode([HikeResponse].self, from: data) {
-                    completion(decodedResponse)
+                    completion(.success(decodedResponse))
                     return
                 }
+                completion(.failure(.ServerError))
+                return
             }
-            completion([])
+            completion(.failure(.ConnectionError))
             return
         }.resume()
     }
     
     // Upload hikes to the server
-    static func postHikes(completion: @escaping (String) -> ()) {
+    static func postHikes(completion: @escaping (Result<ApiMessage, ApiError>) -> ()) {
         guard let url = URL(string: "\(API_URL)/hikes") else {
             return
         }
@@ -73,16 +83,17 @@ struct ApiManager {
             URLSession.shared.dataTask(with: request) { _, response, error in
                 if let httpResponse = response as? HTTPURLResponse {
                     if httpResponse.statusCode == 200 {
-                        completion("success")
+                        completion(.success(.Success))
                         return
                     }
+                    completion(.failure(.RequestError))
+                    return
                 }
-                completion("failed")
+                completion(.failure(.ConnectionError))
                 return
             }.resume()
         }
-        
-        completion("empty")
+        completion(.success(.Success))
     }
 
 }

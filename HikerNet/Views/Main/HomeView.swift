@@ -8,7 +8,6 @@ struct HomeView: View {
                 .tabItem {
                     Image(systemName: "chart.bar")
                     Text("Hikes")
-
                 }
             RecordView()
                 .tabItem {

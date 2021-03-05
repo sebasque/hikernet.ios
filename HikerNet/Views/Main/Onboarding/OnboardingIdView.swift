@@ -22,15 +22,9 @@ struct OnboardingIdView: View {
             HStack {
                 HikerNetButton(title: "Get ID", disabled: idRetrieved) {
                     haptics.impactOccurred()
-                    ApiManager.getId { (id) in
-                        switch (id) {
-                        case "server":
-                            alertMessage = "There was problem with our servers. Please try again later."
-                            showingAlert = true
-                        case "connection":
-                            alertMessage = "You don't seem to have an internet connection. Please try again later."
-                            showingAlert = true
-                        default:
+                    ApiManager.getId { res in
+                        switch res {
+                        case .success(let id):
                             notificationTitle = "Your ID: \(id)"
                             withAnimation { showNotification = true }
                             Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
@@ -39,6 +33,16 @@ struct OnboardingIdView: View {
                             UserDefaultsManager.setId(id: id)
                             UserDefaultsManager.setOnboardingDone(done: true)
                             idRetrieved = true
+                        case .failure(let err):
+                            switch err {
+                            case ApiError.RequestError:
+                                alertMessage = "There was problem with the request. Please try again later."
+                            case ApiError.ServerError:
+                                alertMessage = "There was problem with our servers. Please try again later."
+                            case ApiError.ConnectionError:
+                                alertMessage = "There was a problem with the internet connection. Please try again later."
+                            }
+                            showingAlert = true
                         }
                     }
                 }

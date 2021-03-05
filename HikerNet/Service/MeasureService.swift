@@ -104,9 +104,12 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
         locationPoints.removeAll()
         distance = 0.0
         
-        ApiManager.postHikes { (result) in
-            if (result == "success") {
+        ApiManager.postHikes { res in
+            switch res {
+            case .success(.Success):
                 DatabaseManager.clearCache()
+            case .failure(let err):
+                print(err.localizedDescription)
             }
         }
     }

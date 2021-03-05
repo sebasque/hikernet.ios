@@ -6,6 +6,8 @@ struct HikesView: View {
     @State private var totalDistance: Double = 0.0
     @State private var totalTime: String = "00:00:00"
     @State private var downloading: Bool = false
+    @State private var errorTitle: String = ""
+    @State private var errorMessage: String = ""
     
     var body: some View {
         NavigationView {
@@ -77,11 +79,11 @@ struct HikesView: View {
                     VStack(alignment: .center, spacing: 16) {
                         LottieView(name: "smores", play: .constant(true), loop: true)
                             .frame(width: UIScreen.main.bounds.width, height: 200)
-                        Text("No Hikes")
+                        Text(errorTitle)
                             .foregroundColor(.primary)
                             .font(Font.custom(Constants.Fonts.medium, size: 28))
                             .padding(EdgeInsets(top: 16, leading: 36, bottom: 0, trailing: 36))
-                        Text("You haven't recorded any hikes yet. Start recording to see some data!")
+                        Text(errorMessage)
                             .foregroundColor(.secondary)
                             .font(Font.custom(Constants.Fonts.regular, size: 21))
                             .multilineTextAlignment(.center)
@@ -97,18 +99,40 @@ struct HikesView: View {
         .background(Color(UIColor.systemBackground))
         .onAppear() {
             downloading = true
-            ApiManager.postHikes { result in
-                if result == "success" {
+            ApiManager.postHikes { res in
+                switch res {
+                case .success(.Success):
                     DatabaseManager.clearCache()
+                case .failure(let err):
+                    print(err.localizedDescription)
                 }
-                ApiManager.getHikes { data in
-                    hikes = data
-                    calcTotalDistance()
-                    calcTotalTime()
+                ApiManager.getHikes { res in
+                    switch res {
+                    case .success(let data):
+                        if data.count < 1 {
+                            errorTitle = "No Hikes"
+                            errorMessage = "You haven't recorded any hikes. Start recording to see your data!"
+                        }
+                        hikes = data
+                        calcTotalDistance()
+                        calcTotalTime()
+                    case .failure(let err):
+                        switch err {
+                        case .RequestError:
+                            errorTitle = "Request Error"
+                            errorMessage = "We had a problem getting your hikes. Please try again later."
+                        case .ServerError:
+                            errorTitle = "Server Error"
+                            errorMessage = "Our servers are having some issues. Please try again later."
+                        case .ConnectionError:
+                            errorTitle = "Connection Error"
+                            errorMessage = "There was a problem with the connection. Make sure you're connected to the internet."
+                            
+                        }
+                    }
                     downloading = false
                 }
             }
-            
         }
     }
     

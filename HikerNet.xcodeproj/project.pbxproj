@@ -105,6 +105,7 @@
 		4C8EC54625C885E90062C755 /* Feature+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Feature+CoreDataClass.swift"; path = "HikerNet/Model/CoreData/Feature+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		4C8EC54725C885E90062C755 /* Feature+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Feature+CoreDataProperties.swift"; path = "HikerNet/Model/CoreData/Feature+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		4C8EC55025C8F91A0062C755 /* MeasureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureService.swift; sourceTree = "<group>"; };
+		4C9BFFCD25E59EB1006F9C60 /* HikerNet 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HikerNet 2.xcdatamodel"; sourceTree = "<group>"; };
 		4CB2F0CE25C775CF00E93B38 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		4CB2F0D725C7768900E93B38 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		4CB2F0D825C7768900E93B38 /* no-connection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "no-connection.json"; sourceTree = "<group>"; };
@@ -380,8 +381,8 @@
 				4C8EC54F25C8F90B0062C755 /* Service */,
 				4CEEE26325C769BA00546EA3 /* Utils */,
 				4CFD452925C0E598009A94DE /* HikerNetApp.swift */,
-				4CFD452B25C0E598009A94DE /* MainView.swift */,
 				4CFD453225C0E599009A94DE /* Persistence.swift */,
+				4CFD452B25C0E598009A94DE /* MainView.swift */,
 				4CFD452D25C0E599009A94DE /* Assets.xcassets */,
 				4CFD453725C0E599009A94DE /* Info.plist */,
 				4CFD452F25C0E599009A94DE /* Preview Content */,
@@ -985,9 +986,10 @@
 		4CFD453425C0E599009A94DE /* HikerNet.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				4C9BFFCD25E59EB1006F9C60 /* HikerNet 2.xcdatamodel */,
 				4CFD453525C0E599009A94DE /* HikerNet.xcdatamodel */,
 			);
-			currentVersion = 4CFD453525C0E599009A94DE /* HikerNet.xcdatamodel */;
+			currentVersion = 4C9BFFCD25E59EB1006F9C60 /* HikerNet 2.xcdatamodel */;
 			path = HikerNet.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
