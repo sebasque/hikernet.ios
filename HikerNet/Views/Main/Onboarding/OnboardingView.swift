@@ -13,8 +13,6 @@ struct OnboardingView: View {
             TabView(selection: $currentIndex.animation()) {
               ForEach(0..<numOfPages, id: \.self) { index in
                 switch(index) {
-                    case 0:
-                        OnboardingStartView()
                     case 1:
                         OnboardingPrivacyView(privacyAgreed: $buttonEnabled)
                     case 2:
