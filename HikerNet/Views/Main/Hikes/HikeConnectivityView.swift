@@ -3,7 +3,7 @@ import SwiftUI
 
 struct HikeConnectivityView: View {
     @State var hikes: [HikeResponse]
-    @State private var connected: Int = 0
+    @State private var connected: Int = 100
     
     var body: some View {
         GeometryReader { geometry in
@@ -11,6 +11,7 @@ struct HikeConnectivityView: View {
                 HStack {
                     RoundedRectangle(cornerRadius: 5)
                         .foregroundColor(connected >= 50 ? Constants.Colors.green : Color.red)
+                        // The 60 value is like a manually calculated padding space for the connectivity label to appear so it doesn't bleed off of the screen.
                         .frame(width: (geometry.size.width - 60) * CGFloat(connected) / 100 , height: 10)
                     Text("\(connected)%")
                         .font(Font.custom(Constants.Fonts.medium, size: 17))
@@ -23,25 +24,7 @@ struct HikeConnectivityView: View {
             }
         }
         .onAppear() {
-            calcConnectivity()
-        }
-    }
-    
-    private func calcConnectivity() {
-        var connectedPercentage = 0
-        var featureCount = 0
-        for hike in hikes {
-            for feature in hike.features {
-                featureCount += 1
-                if feature.service == 1 {
-                    connectedPercentage += 1
-                }
-            }
-        }
-        if featureCount > 0 {
-            connected = connectedPercentage / featureCount * 100
-        } else {
-            connected = 0
+//            connected = ConnectivityManager.calcConnectivity(hikes: hikes)
         }
     }
 }

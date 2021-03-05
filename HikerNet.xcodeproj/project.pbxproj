@@ -17,6 +17,7 @@
 		4C5EB21D25CF71480022CEDE /* HikeConnectivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB21C25CF71480022CEDE /* HikeConnectivityView.swift */; };
 		4C5EB22225CF9B0C0022CEDE /* smores.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C5EB22125CF9B0C0022CEDE /* smores.json */; };
 		4C5EB23025CFA96F0022CEDE /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB22F25CFA96F0022CEDE /* SettingsButton.swift */; };
+		4C6E5BC225F1F29C0046D5D0 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E5BC125F1F29C0046D5D0 /* ConnectivityManager.swift */; };
 		4C7905CF25CB450C00AC7E2D /* HikePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7905CE25CB450C00AC7E2D /* HikePost.swift */; };
 		4C7905D425CB451200AC7E2D /* FeaturePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7905D325CB451200AC7E2D /* FeaturePost.swift */; };
 		4C7905E225CB9DFA00AC7E2D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7905E125CB9DFA00AC7E2D /* DatabaseManager.swift */; };
@@ -96,6 +97,7 @@
 		4C5EB21C25CF71480022CEDE /* HikeConnectivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeConnectivityView.swift; sourceTree = "<group>"; };
 		4C5EB22125CF9B0C0022CEDE /* smores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smores.json; sourceTree = "<group>"; };
 		4C5EB22F25CFA96F0022CEDE /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		4C6E5BC125F1F29C0046D5D0 /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
 		4C7905CE25CB450C00AC7E2D /* HikePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikePost.swift; sourceTree = "<group>"; };
 		4C7905D325CB451200AC7E2D /* FeaturePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturePost.swift; sourceTree = "<group>"; };
 		4C7905E125CB9DFA00AC7E2D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				4C7905E125CB9DFA00AC7E2D /* DatabaseManager.swift */,
 				4C7905F025CC77C900AC7E2D /* TimeFormatter.swift */,
 				4CB2F0EA25C787FA00E93B38 /* UserDefaultsManager.swift */,
+				4C6E5BC125F1F29C0046D5D0 /* ConnectivityManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				4CB2F10C25C7B08100E93B38 /* RecordView.swift in Sources */,
 				4C7905CF25CB450C00AC7E2D /* HikePost.swift in Sources */,
 				4CFD452A25C0E598009A94DE /* HikerNetApp.swift in Sources */,
+				4C6E5BC225F1F29C0046D5D0 /* ConnectivityManager.swift in Sources */,
 				4C5EB1DC25CDCEB00022CEDE /* IdResponse.swift in Sources */,
 				4C8EC54A25C885E90062C755 /* Feature+CoreDataClass.swift in Sources */,
 				4C5EB20925CF29830022CEDE /* HikeMapView.swift in Sources */,

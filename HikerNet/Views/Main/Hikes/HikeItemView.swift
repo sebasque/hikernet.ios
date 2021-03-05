@@ -21,8 +21,8 @@ struct HikeItemView: View {
             HStack {
                 HStack(alignment: .center, spacing: 32) {
                     VStack(alignment: .leading) {
-                        Text("\(calcConnectivity())%")
-                            .foregroundColor(calcConnectivity() >= 50 ? Constants.Colors.green : Color.red)
+                        Text("\(ConnectivityManager.calcConnectivity(hikes: [hike]))%")
+                            .foregroundColor(ConnectivityManager.calcConnectivity(hikes: [hike]) >= 50 ? Constants.Colors.green : Color.red)
                             .font(Font.custom(Constants.Fonts.medium, size: 17))
                         Text("connectivity")
                             .foregroundColor(.secondary)
@@ -54,19 +54,5 @@ struct HikeItemView: View {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .fill(Color(UIColor.secondarySystemBackground))
         )
-    }
-    
-    private func calcConnectivity() -> Int {
-        var total = 0
-        for feature in hike.features {
-            if feature.service == 1 {
-                total += 1
-            }
-        }
-        if hike.features.count > 0 {
-            return total / hike.features.count * 100
-        } else {
-            return 0
-        }
     }
 }
