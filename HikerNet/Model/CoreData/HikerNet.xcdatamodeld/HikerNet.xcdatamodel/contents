@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Feature" representedClassName="Feature" syncable="YES">
+        <attribute name="accuracy" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="battery" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="connected" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="httpConnection" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="inService" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="networkType" optional="YES" attributeType="String"/>
+        <attribute name="speed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Hike" inverseName="features" inverseEntity="Hike"/>
+    </entity>
+    <entity name="Hike" representedClassName="Hike" syncable="YES">
+        <attribute name="carrier" optional="YES" attributeType="String"/>
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="manufacturer" optional="YES" attributeType="String"/>
+        <attribute name="osVersion" optional="YES" attributeType="String"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="features" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Feature" inverseName="origin" inverseEntity="Feature"/>
+    </entity>
+    <elements>
+        <element name="Feature" positionX="7504.645751953125" positionY="-2209.705261230469" width="128" height="194"/>
+        <element name="Hike" positionX="7284.371337890625" positionY="-2156.334167480469" width="128" height="163"/>
+    </elements>
+</model>

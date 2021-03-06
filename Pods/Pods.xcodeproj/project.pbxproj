@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -17,6 +17,7 @@
 				E84C8436AF7EDAB46A551420356B288E /* PBXTargetDependency */,
 			);
 			name = "Mapbox-iOS-SDK";
+			productName = "Mapbox-iOS-SDK";
 		};
 /* End PBXAggregateTarget section */
 
@@ -289,7 +290,7 @@
 		2AFB5298678F06C04F76C633C414AEC5 /* MMEEventLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMEEventLogger.m; path = Sources/MapboxMobileEvents/include/MapboxMobileEvents/MMEEventLogger.m; sourceTree = "<group>"; };
 		2B8B07BD60103DD2EF1C74110EEE1A03 /* MMEEventsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMEEventsManager.m; path = Sources/MapboxMobileEvents/include/MapboxMobileEvents/MMEEventsManager.m; sourceTree = "<group>"; };
 		2C66172200877A7D52A6504DA3BB36E3 /* MMEDependencyManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMEDependencyManager.h; path = Sources/MapboxMobileEvents/include/MapboxMobileEvents/MMEDependencyManager.h; sourceTree = "<group>"; };
-		2DAFBA79B3512AEFCD3F777CF27F3BD8 /* Pods_HikerNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HikerNet.framework; path = "Pods-HikerNet.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DAFBA79B3512AEFCD3F777CF27F3BD8 /* Pods_HikerNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HikerNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC8B7765D9DE775D0A1C878106D0336 /* SingleValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleValueProvider.swift; path = "lottie-swift/src/Private/NodeRenderSystem/NodeProperties/ValueProviders/SingleValueProvider.swift"; sourceTree = "<group>"; };
 		2FFF72D4983655A4460A0305F289865F /* NSProcessInfo+SystemInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSProcessInfo+SystemInfo.h"; path = "Sources/MapboxMobileEvents/include/MapboxMobileEvents/NSProcessInfo+SystemInfo.h"; sourceTree = "<group>"; };
 		30659F8FB5152E936D2A8D6435C3E4C4 /* AnimationKeypath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationKeypath.swift; path = "lottie-swift/src/Public/DynamicProperties/AnimationKeypath.swift"; sourceTree = "<group>"; };
@@ -322,7 +323,7 @@
 		4DFFBA53C07DCA9D8DABC116F9CF94A0 /* MMEEventsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMEEventsManager.h; path = Sources/MapboxMobileEvents/include/MapboxMobileEvents/MMEEventsManager.h; sourceTree = "<group>"; };
 		4F1E84FD4077276F09668243ADA7BD40 /* NullCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NullCompositionLayer.swift; path = "lottie-swift/src/Private/LayerContainers/CompLayers/NullCompositionLayer.swift"; sourceTree = "<group>"; };
 		502294ABFD2FB078BB8D1D27239DCD7F /* GradientFillNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientFillNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/RenderNodes/GradientFillNode.swift"; sourceTree = "<group>"; };
-		51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Lottie.framework; path = "lottie-ios.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D2BCD297E0A896E07AB73522CA8745 /* PathElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathElement.swift; path = "lottie-swift/src/Private/Utility/Primitives/PathElement.swift"; sourceTree = "<group>"; };
 		52E89A5DBCF9A5EAE5F170E1430722E3 /* MMELocationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMELocationManager.m; path = Sources/MapboxMobileEvents/include/MapboxMobileEvents/MMELocationManager.m; sourceTree = "<group>"; };
 		531B2DD8C8D6EFF0B60450D89E3146FD /* CLLocationManager+MMEMobileEvents.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CLLocationManager+MMEMobileEvents.h"; path = "Sources/MapboxMobileEvents/include/MapboxMobileEvents/CLLocationManager+MMEMobileEvents.h"; sourceTree = "<group>"; };
@@ -364,7 +365,7 @@
 		79D6E9487448A82EB8A4AF0268C74F1E /* AnimationTextProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationTextProvider.swift; path = "lottie-swift/src/Public/TextProvider/AnimationTextProvider.swift"; sourceTree = "<group>"; };
 		7B543D083D23A9B724BF6D169880F16E /* Mapbox-iOS-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mapbox-iOS-SDK.release.xcconfig"; sourceTree = "<group>"; };
 		7BF3D8C4EC0FAC8C723C30031FE471CC /* TextLayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextLayerModel.swift; path = "lottie-swift/src/Private/Model/Layers/TextLayerModel.swift"; sourceTree = "<group>"; };
-		7CDFA2DAE745FD57264494A16D3C14B6 /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MapboxMobileEvents.framework; path = MapboxMobileEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CDFA2DAE745FD57264494A16D3C14B6 /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MapboxMobileEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFDA06C3E9C0C83392D776BCDAF20B2 /* KeyframeInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeInterpolator.swift; path = "lottie-swift/src/Private/NodeRenderSystem/NodeProperties/ValueProviders/KeyframeInterpolator.swift"; sourceTree = "<group>"; };
 		803EC754262A502DC09E716AE07438EE /* PathNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Protocols/PathNode.swift"; sourceTree = "<group>"; };
 		807A8AC1AA92AAB1DA546848EFFE8590 /* CLLocation+MMEMobileEvents.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CLLocation+MMEMobileEvents.m"; path = "Sources/MapboxMobileEvents/include/MapboxMobileEvents/CLLocation+MMEMobileEvents.m"; sourceTree = "<group>"; };
@@ -390,7 +391,7 @@
 		98027FC879391E6B99D9A7C759C1C303 /* InterpolatableExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InterpolatableExtensions.swift; path = "lottie-swift/src/Private/Utility/Interpolatable/InterpolatableExtensions.swift"; sourceTree = "<group>"; };
 		9A6B405718E4CB12C02E83138B5198A5 /* LayerTransformNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerTransformNode.swift; path = "lottie-swift/src/Private/LayerContainers/Utility/LayerTransformNode.swift"; sourceTree = "<group>"; };
 		9B90956CAF304E786DAAB2AFDE28949F /* Trim.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Trim.swift; path = "lottie-swift/src/Private/Model/ShapeItems/Trim.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E349FAFC7A304071093437E785A3FA2 /* MapboxMobileEvents-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapboxMobileEvents-prefix.pch"; sourceTree = "<group>"; };
 		9F2A0807AF39A8D80174F9D64E8A9079 /* MMEConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMEConstants.h; path = Sources/MapboxMobileEvents/include/MapboxMobileEvents/MMEConstants.h; sourceTree = "<group>"; };
 		A339A483AA36542CC35D602B41152B1D /* NSBundle+MMEMobileEvents.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+MMEMobileEvents.m"; path = "Sources/MapboxMobileEvents/include/MapboxMobileEvents/NSBundle+MMEMobileEvents.m"; sourceTree = "<group>"; };
@@ -594,7 +595,6 @@
 				F3971F02F1F14D8CC9511E1107C82A08 /* UIKit+MMEMobileEvents.m */,
 				45E3E697CFC29C1E00C66F62E62FA77B /* Support Files */,
 			);
-			name = MapboxMobileEvents;
 			path = MapboxMobileEvents;
 			sourceTree = "<group>";
 		};
@@ -604,7 +604,6 @@
 				3D8644D275762226B670E0B95CA6593B /* Frameworks */,
 				9E6EB20DEFF8D4127FA2BFE1A0F03D2D /* Support Files */,
 			);
-			name = "Mapbox-iOS-SDK";
 			path = "Mapbox-iOS-SDK";
 			sourceTree = "<group>";
 		};
@@ -809,7 +808,6 @@
 				4C56E5C72EBB778011D7B1AF99683F9B /* VectorsExtensions.swift */,
 				57C118C3AB8503F3CE5DF04DA682965E /* Support Files */,
 			);
-			name = "lottie-ios";
 			path = "lottie-ios";
 			sourceTree = "<group>";
 		};
@@ -971,7 +969,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -1327,7 +1325,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MapboxMobileEvents/MapboxMobileEvents-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MapboxMobileEvents/MapboxMobileEvents-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1498,7 +1496,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/lottie-ios/lottie-ios-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/lottie-ios/lottie-ios-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1524,7 +1522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1549,7 +1547,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MapboxMobileEvents/MapboxMobileEvents-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MapboxMobileEvents/MapboxMobileEvents-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1584,7 +1582,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/lottie-ios/lottie-ios-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/lottie-ios/lottie-ios-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1609,7 +1607,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

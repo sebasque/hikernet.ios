@@ -3,12 +3,61 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C5EB1DC25CDCEB00022CEDE /* IdResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB1DB25CDCEB00022CEDE /* IdResponse.swift */; };
+		4C5EB1F225CE6C4A0022CEDE /* HikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB1F125CE6C4A0022CEDE /* HikeResponse.swift */; };
+		4C5EB1F725CE6C690022CEDE /* FeatureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB1F625CE6C690022CEDE /* FeatureResponse.swift */; };
+		4C5EB1FC25CE759E0022CEDE /* HikeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB1FB25CE759E0022CEDE /* HikeItemView.swift */; };
+		4C5EB20125CF28E20022CEDE /* HikeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB20025CF28E20022CEDE /* HikeDetailView.swift */; };
+		4C5EB20925CF29830022CEDE /* HikeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB20825CF29830022CEDE /* HikeMapView.swift */; };
+		4C5EB20E25CF3DE20022CEDE /* HikeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB20D25CF3DE20022CEDE /* HikeCardView.swift */; };
+		4C5EB21D25CF71480022CEDE /* HikeConnectivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB21C25CF71480022CEDE /* HikeConnectivityView.swift */; };
+		4C5EB22225CF9B0C0022CEDE /* smores.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C5EB22125CF9B0C0022CEDE /* smores.json */; };
+		4C5EB23025CFA96F0022CEDE /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EB22F25CFA96F0022CEDE /* SettingsButton.swift */; };
+		4C6E5BC225F1F29C0046D5D0 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E5BC125F1F29C0046D5D0 /* ConnectivityManager.swift */; };
+		4C7905CF25CB450C00AC7E2D /* HikePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7905CE25CB450C00AC7E2D /* HikePost.swift */; };
+		4C7905D425CB451200AC7E2D /* FeaturePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7905D325CB451200AC7E2D /* FeaturePost.swift */; };
+		4C7905E225CB9DFA00AC7E2D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7905E125CB9DFA00AC7E2D /* DatabaseManager.swift */; };
+		4C7905F125CC77C900AC7E2D /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7905F025CC77C900AC7E2D /* TimeFormatter.swift */; };
+		4C8EC54825C885E90062C755 /* Hike+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EC54425C885E90062C755 /* Hike+CoreDataClass.swift */; };
+		4C8EC54925C885E90062C755 /* Hike+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EC54525C885E90062C755 /* Hike+CoreDataProperties.swift */; };
+		4C8EC54A25C885E90062C755 /* Feature+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EC54625C885E90062C755 /* Feature+CoreDataClass.swift */; };
+		4C8EC54B25C885E90062C755 /* Feature+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EC54725C885E90062C755 /* Feature+CoreDataProperties.swift */; };
+		4C8EC55125C8F91A0062C755 /* MeasureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EC55025C8F91A0062C755 /* MeasureService.swift */; };
+		4CB2F0CF25C775CF00E93B38 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2F0CE25C775CF00E93B38 /* LottieView.swift */; };
+		4CB2F0DB25C7768900E93B38 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CB2F0D725C7768900E93B38 /* loading.json */; };
+		4CB2F0DC25C7768900E93B38 /* no-connection.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CB2F0D825C7768900E93B38 /* no-connection.json */; };
+		4CB2F0DD25C7768900E93B38 /* checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CB2F0D925C7768900E93B38 /* checkmark.json */; };
+		4CB2F0E325C786D200E93B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2F0E225C786D200E93B38 /* HomeView.swift */; };
+		4CB2F0EB25C787FA00E93B38 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2F0EA25C787FA00E93B38 /* UserDefaultsManager.swift */; };
+		4CB2F0F625C7A01300E93B38 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2F0F525C7A01300E93B38 /* SafariView.swift */; };
+		4CB2F10425C7B07400E93B38 /* HikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2F10325C7B07400E93B38 /* HikesView.swift */; };
+		4CB2F10C25C7B08100E93B38 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2F10B25C7B08100E93B38 /* RecordView.swift */; };
+		4CB2F11125C7B09100E93B38 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2F11025C7B09100E93B38 /* SettingsView.swift */; };
+		4CBFD00D25C7BA0500F6BBBF /* RecordMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBFD00C25C7BA0500F6BBBF /* RecordMapView.swift */; };
+		4CBFD01E25C7C20A00F6BBBF /* CurrentLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBFD01D25C7C20A00F6BBBF /* CurrentLocationButton.swift */; };
+		4CBFD02325C7C21300F6BBBF /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBFD02225C7C21300F6BBBF /* RecordButton.swift */; };
+		4CD150D825C67FBB0096397E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD150D725C67FBB0096397E /* Constants.swift */; };
+		4CD150F925C689610096397E /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150E725C689600096397E /* WorkSans-Medium.ttf */; };
+		4CD150FC25C689610096397E /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150EA25C689600096397E /* WorkSans-Regular.ttf */; };
+		4CD1510225C689610096397E /* WorkSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F025C689610096397E /* WorkSans-Italic.ttf */; };
+		4CD1510625C689610096397E /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F425C689610096397E /* WorkSans-Light.ttf */; };
+		4CD1510725C689610096397E /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F525C689610096397E /* WorkSans-Bold.ttf */; };
+		4CD1510825C689610096397E /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CD150F625C689610096397E /* WorkSans-SemiBold.ttf */; };
+		4CEEE1F125C7222900546EA3 /* HikerNetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEE1F025C7222900546EA3 /* HikerNetButton.swift */; };
+		4CEEE1FE25C728DD00546EA3 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEE1FD25C728DD00546EA3 /* OnboardingView.swift */; };
+		4CEEE20325C7321D00546EA3 /* OnboardingIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEE20225C7321D00546EA3 /* OnboardingIndexView.swift */; };
+		4CEEE20D25C7387C00546EA3 /* OnboardingStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEE20C25C7387C00546EA3 /* OnboardingStartView.swift */; };
+		4CEEE21225C7388B00546EA3 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEE21125C7388B00546EA3 /* OnboardingPrivacyView.swift */; };
+		4CEEE21725C7389400546EA3 /* OnboardingCarrierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEE21625C7389400546EA3 /* OnboardingCarrierView.swift */; };
+		4CEEE21C25C7389D00546EA3 /* OnboardingIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEE21B25C7389D00546EA3 /* OnboardingIdView.swift */; };
+		4CEEE22D25C738B400546EA3 /* OnboardingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEE22C25C738B400546EA3 /* OnboardingEndView.swift */; };
+		4CEEE25F25C769AC00546EA3 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEE25E25C769AC00546EA3 /* ApiManager.swift */; };
 		4CFD452A25C0E598009A94DE /* HikerNetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD452925C0E598009A94DE /* HikerNetApp.swift */; };
-		4CFD452C25C0E598009A94DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD452B25C0E598009A94DE /* ContentView.swift */; };
+		4CFD452C25C0E598009A94DE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD452B25C0E598009A94DE /* MainView.swift */; };
 		4CFD452E25C0E599009A94DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFD452D25C0E599009A94DE /* Assets.xcassets */; };
 		4CFD453125C0E599009A94DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFD453025C0E599009A94DE /* Preview Assets.xcassets */; };
 		4CFD453325C0E599009A94DE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD453225C0E599009A94DE /* Persistence.swift */; };
@@ -38,9 +87,59 @@
 /* Begin PBXFileReference section */
 		0913428C2DE0A6E1B2FA0326 /* Pods-HikerNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HikerNet.release.xcconfig"; path = "Target Support Files/Pods-HikerNet/Pods-HikerNet.release.xcconfig"; sourceTree = "<group>"; };
 		1F9C6A10F60AB7C41B20192B /* Pods_HikerNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HikerNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C5EB1DB25CDCEB00022CEDE /* IdResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdResponse.swift; sourceTree = "<group>"; };
+		4C5EB1F125CE6C4A0022CEDE /* HikeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeResponse.swift; sourceTree = "<group>"; };
+		4C5EB1F625CE6C690022CEDE /* FeatureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureResponse.swift; sourceTree = "<group>"; };
+		4C5EB1FB25CE759E0022CEDE /* HikeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeItemView.swift; sourceTree = "<group>"; };
+		4C5EB20025CF28E20022CEDE /* HikeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeDetailView.swift; sourceTree = "<group>"; };
+		4C5EB20825CF29830022CEDE /* HikeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeMapView.swift; sourceTree = "<group>"; };
+		4C5EB20D25CF3DE20022CEDE /* HikeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeCardView.swift; sourceTree = "<group>"; };
+		4C5EB21C25CF71480022CEDE /* HikeConnectivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeConnectivityView.swift; sourceTree = "<group>"; };
+		4C5EB22125CF9B0C0022CEDE /* smores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smores.json; sourceTree = "<group>"; };
+		4C5EB22F25CFA96F0022CEDE /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		4C6E5BC125F1F29C0046D5D0 /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
+		4C7905CE25CB450C00AC7E2D /* HikePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikePost.swift; sourceTree = "<group>"; };
+		4C7905D325CB451200AC7E2D /* FeaturePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturePost.swift; sourceTree = "<group>"; };
+		4C7905E125CB9DFA00AC7E2D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		4C7905F025CC77C900AC7E2D /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		4C8EC54425C885E90062C755 /* Hike+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Hike+CoreDataClass.swift"; path = "HikerNet/Model/CoreData/Hike+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		4C8EC54525C885E90062C755 /* Hike+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Hike+CoreDataProperties.swift"; path = "HikerNet/Model/CoreData/Hike+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		4C8EC54625C885E90062C755 /* Feature+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Feature+CoreDataClass.swift"; path = "HikerNet/Model/CoreData/Feature+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		4C8EC54725C885E90062C755 /* Feature+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Feature+CoreDataProperties.swift"; path = "HikerNet/Model/CoreData/Feature+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		4C8EC55025C8F91A0062C755 /* MeasureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureService.swift; sourceTree = "<group>"; };
+		4C9BFFCD25E59EB1006F9C60 /* HikerNet 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HikerNet 2.xcdatamodel"; sourceTree = "<group>"; };
+		4CB2F0CE25C775CF00E93B38 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		4CB2F0D725C7768900E93B38 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		4CB2F0D825C7768900E93B38 /* no-connection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "no-connection.json"; sourceTree = "<group>"; };
+		4CB2F0D925C7768900E93B38 /* checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checkmark.json; sourceTree = "<group>"; };
+		4CB2F0E225C786D200E93B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4CB2F0EA25C787FA00E93B38 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		4CB2F0F525C7A01300E93B38 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		4CB2F10325C7B07400E93B38 /* HikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikesView.swift; sourceTree = "<group>"; };
+		4CB2F10B25C7B08100E93B38 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		4CB2F11025C7B09100E93B38 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4CBFD00C25C7BA0500F6BBBF /* RecordMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMapView.swift; sourceTree = "<group>"; };
+		4CBFD01D25C7C20A00F6BBBF /* CurrentLocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationButton.swift; sourceTree = "<group>"; };
+		4CBFD02225C7C21300F6BBBF /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		4CD150D725C67FBB0096397E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4CD150E725C689600096397E /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Medium.ttf"; sourceTree = "<group>"; };
+		4CD150EA25C689600096397E /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
+		4CD150F025C689610096397E /* WorkSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Italic.ttf"; sourceTree = "<group>"; };
+		4CD150F425C689610096397E /* WorkSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Light.ttf"; sourceTree = "<group>"; };
+		4CD150F525C689610096397E /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
+		4CD150F625C689610096397E /* WorkSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		4CEEE1F025C7222900546EA3 /* HikerNetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikerNetButton.swift; sourceTree = "<group>"; };
+		4CEEE1FD25C728DD00546EA3 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		4CEEE20225C7321D00546EA3 /* OnboardingIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIndexView.swift; sourceTree = "<group>"; };
+		4CEEE20C25C7387C00546EA3 /* OnboardingStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStartView.swift; sourceTree = "<group>"; };
+		4CEEE21125C7388B00546EA3 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
+		4CEEE21625C7389400546EA3 /* OnboardingCarrierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarrierView.swift; sourceTree = "<group>"; };
+		4CEEE21B25C7389D00546EA3 /* OnboardingIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIdView.swift; sourceTree = "<group>"; };
+		4CEEE22C25C738B400546EA3 /* OnboardingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEndView.swift; sourceTree = "<group>"; };
+		4CEEE25E25C769AC00546EA3 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		4CFD452625C0E598009A94DE /* HikerNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HikerNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFD452925C0E598009A94DE /* HikerNetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikerNetApp.swift; sourceTree = "<group>"; };
-		4CFD452B25C0E598009A94DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4CFD452B25C0E598009A94DE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4CFD452D25C0E599009A94DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CFD453025C0E599009A94DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4CFD453225C0E599009A94DE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -81,6 +180,178 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C5EB1DA25CDCE930022CEDE /* Get */ = {
+			isa = PBXGroup;
+			children = (
+				4C5EB1DB25CDCEB00022CEDE /* IdResponse.swift */,
+				4C5EB1F125CE6C4A0022CEDE /* HikeResponse.swift */,
+				4C5EB1F625CE6C690022CEDE /* FeatureResponse.swift */,
+			);
+			path = Get;
+			sourceTree = "<group>";
+		};
+		4C7905BC25CB405500AC7E2D /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4C5EB1DA25CDCE930022CEDE /* Get */,
+				4C7905E625CBA18200AC7E2D /* Post */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		4C7905E625CBA18200AC7E2D /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				4C7905CE25CB450C00AC7E2D /* HikePost.swift */,
+				4C7905D325CB451200AC7E2D /* FeaturePost.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		4C8A87B725C67A6F0048D570 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CB2F10125C7AFEA00E93B38 /* Auxiliary */,
+				4CB2F10225C7B00D00E93B38 /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C8A87B825C67A750048D570 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C7905BC25CB405500AC7E2D /* Api */,
+				4C8EC52F25C8838D0062C755 /* CoreData */,
+				4CD150D725C67FBB0096397E /* Constants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C8A87CD25C67C3E0048D570 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4CEEE1FD25C728DD00546EA3 /* OnboardingView.swift */,
+				4CEEE20225C7321D00546EA3 /* OnboardingIndexView.swift */,
+				4CEEE20C25C7387C00546EA3 /* OnboardingStartView.swift */,
+				4CEEE21125C7388B00546EA3 /* OnboardingPrivacyView.swift */,
+				4CEEE21625C7389400546EA3 /* OnboardingCarrierView.swift */,
+				4CEEE21B25C7389D00546EA3 /* OnboardingIdView.swift */,
+				4CEEE22C25C738B400546EA3 /* OnboardingEndView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		4C8EC52F25C8838D0062C755 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4C8EC54425C885E90062C755 /* Hike+CoreDataClass.swift */,
+				4C8EC54525C885E90062C755 /* Hike+CoreDataProperties.swift */,
+				4C8EC54625C885E90062C755 /* Feature+CoreDataClass.swift */,
+				4C8EC54725C885E90062C755 /* Feature+CoreDataProperties.swift */,
+				4CFD453425C0E599009A94DE /* HikerNet.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		4C8EC54F25C8F90B0062C755 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4C8EC55025C8F91A0062C755 /* MeasureService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4CB2F0D625C7766E00E93B38 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				4CB2F0D925C7768900E93B38 /* checkmark.json */,
+				4CB2F0D725C7768900E93B38 /* loading.json */,
+				4C5EB22125CF9B0C0022CEDE /* smores.json */,
+				4CB2F0D825C7768900E93B38 /* no-connection.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		4CB2F0FE25C7AFB700E93B38 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				4CB2F10B25C7B08100E93B38 /* RecordView.swift */,
+				4CBFD00C25C7BA0500F6BBBF /* RecordMapView.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		4CB2F0FF25C7AFC100E93B38 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4CB2F11025C7B09100E93B38 /* SettingsView.swift */,
+				4C5EB22F25CFA96F0022CEDE /* SettingsButton.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		4CB2F10025C7AFD700E93B38 /* Hikes */ = {
+			isa = PBXGroup;
+			children = (
+				4CB2F10325C7B07400E93B38 /* HikesView.swift */,
+				4C5EB1FB25CE759E0022CEDE /* HikeItemView.swift */,
+				4C5EB20025CF28E20022CEDE /* HikeDetailView.swift */,
+				4C5EB20825CF29830022CEDE /* HikeMapView.swift */,
+				4C5EB20D25CF3DE20022CEDE /* HikeCardView.swift */,
+				4C5EB21C25CF71480022CEDE /* HikeConnectivityView.swift */,
+			);
+			path = Hikes;
+			sourceTree = "<group>";
+		};
+		4CB2F10125C7AFEA00E93B38 /* Auxiliary */ = {
+			isa = PBXGroup;
+			children = (
+				4CB2F0CE25C775CF00E93B38 /* LottieView.swift */,
+				4CEEE1F025C7222900546EA3 /* HikerNetButton.swift */,
+				4CB2F0F525C7A01300E93B38 /* SafariView.swift */,
+				4CBFD01D25C7C20A00F6BBBF /* CurrentLocationButton.swift */,
+				4CBFD02225C7C21300F6BBBF /* RecordButton.swift */,
+			);
+			path = Auxiliary;
+			sourceTree = "<group>";
+		};
+		4CB2F10225C7B00D00E93B38 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4C8A87CD25C67C3E0048D570 /* Onboarding */,
+				4CB2F10025C7AFD700E93B38 /* Hikes */,
+				4CB2F0FE25C7AFB700E93B38 /* Record */,
+				4CB2F0FF25C7AFC100E93B38 /* Settings */,
+				4CB2F0E225C786D200E93B38 /* HomeView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4CD150E525C6890C0096397E /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4CD150F525C689610096397E /* WorkSans-Bold.ttf */,
+				4CD150F025C689610096397E /* WorkSans-Italic.ttf */,
+				4CD150F425C689610096397E /* WorkSans-Light.ttf */,
+				4CD150E725C689600096397E /* WorkSans-Medium.ttf */,
+				4CD150EA25C689600096397E /* WorkSans-Regular.ttf */,
+				4CD150F625C689610096397E /* WorkSans-SemiBold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		4CEEE26325C769BA00546EA3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4CEEE25E25C769AC00546EA3 /* ApiManager.swift */,
+				4C7905E125CB9DFA00AC7E2D /* DatabaseManager.swift */,
+				4C7905F025CC77C900AC7E2D /* TimeFormatter.swift */,
+				4CB2F0EA25C787FA00E93B38 /* UserDefaultsManager.swift */,
+				4C6E5BC125F1F29C0046D5D0 /* ConnectivityManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		4CFD451D25C0E598009A94DE = {
 			isa = PBXGroup;
 			children = (
@@ -106,12 +377,17 @@
 		4CFD452825C0E598009A94DE /* HikerNet */ = {
 			isa = PBXGroup;
 			children = (
+				4CB2F0D625C7766E00E93B38 /* Animations */,
+				4CD150E525C6890C0096397E /* Font */,
+				4C8A87B825C67A750048D570 /* Model */,
+				4C8A87B725C67A6F0048D570 /* Views */,
+				4C8EC54F25C8F90B0062C755 /* Service */,
+				4CEEE26325C769BA00546EA3 /* Utils */,
 				4CFD452925C0E598009A94DE /* HikerNetApp.swift */,
-				4CFD452B25C0E598009A94DE /* ContentView.swift */,
-				4CFD452D25C0E599009A94DE /* Assets.xcassets */,
 				4CFD453225C0E599009A94DE /* Persistence.swift */,
+				4CFD452B25C0E598009A94DE /* MainView.swift */,
+				4CFD452D25C0E599009A94DE /* Assets.xcassets */,
 				4CFD453725C0E599009A94DE /* Info.plist */,
-				4CFD453425C0E599009A94DE /* HikerNet.xcdatamodeld */,
 				4CFD452F25C0E599009A94DE /* Preview Content */,
 			);
 			path = HikerNet;
@@ -149,7 +425,6 @@
 				799778A448875F5E17A10A9D /* Pods-HikerNet.debug.xcconfig */,
 				0913428C2DE0A6E1B2FA0326 /* Pods-HikerNet.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -266,8 +541,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB2F0DC25C7768900E93B38 /* no-connection.json in Resources */,
+				4CD1510825C689610096397E /* WorkSans-SemiBold.ttf in Resources */,
 				4CFD453125C0E599009A94DE /* Preview Assets.xcassets in Resources */,
+				4CB2F0DD25C7768900E93B38 /* checkmark.json in Resources */,
+				4CD150F925C689610096397E /* WorkSans-Medium.ttf in Resources */,
+				4CB2F0DB25C7768900E93B38 /* loading.json in Resources */,
+				4CD1510725C689610096397E /* WorkSans-Bold.ttf in Resources */,
+				4CD1510225C689610096397E /* WorkSans-Italic.ttf in Resources */,
 				4CFD452E25C0E599009A94DE /* Assets.xcassets in Resources */,
+				4CD1510625C689610096397E /* WorkSans-Light.ttf in Resources */,
+				4CD150FC25C689610096397E /* WorkSans-Regular.ttf in Resources */,
+				4C5EB22225CF9B0C0022CEDE /* smores.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,10 +619,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7905E225CB9DFA00AC7E2D /* DatabaseManager.swift in Sources */,
+				4CB2F11125C7B09100E93B38 /* SettingsView.swift in Sources */,
+				4CEEE25F25C769AC00546EA3 /* ApiManager.swift in Sources */,
+				4CB2F0CF25C775CF00E93B38 /* LottieView.swift in Sources */,
+				4CBFD00D25C7BA0500F6BBBF /* RecordMapView.swift in Sources */,
 				4CFD453325C0E599009A94DE /* Persistence.swift in Sources */,
-				4CFD452C25C0E598009A94DE /* ContentView.swift in Sources */,
+				4CEEE20325C7321D00546EA3 /* OnboardingIndexView.swift in Sources */,
+				4CEEE20D25C7387C00546EA3 /* OnboardingStartView.swift in Sources */,
+				4C5EB21D25CF71480022CEDE /* HikeConnectivityView.swift in Sources */,
+				4CB2F0EB25C787FA00E93B38 /* UserDefaultsManager.swift in Sources */,
+				4CBFD02325C7C21300F6BBBF /* RecordButton.swift in Sources */,
+				4CEEE1F125C7222900546EA3 /* HikerNetButton.swift in Sources */,
+				4C8EC54925C885E90062C755 /* Hike+CoreDataProperties.swift in Sources */,
+				4CBFD01E25C7C20A00F6BBBF /* CurrentLocationButton.swift in Sources */,
+				4CFD452C25C0E598009A94DE /* MainView.swift in Sources */,
+				4CEEE21C25C7389D00546EA3 /* OnboardingIdView.swift in Sources */,
+				4C5EB1F725CE6C690022CEDE /* FeatureResponse.swift in Sources */,
+				4CEEE22D25C738B400546EA3 /* OnboardingEndView.swift in Sources */,
+				4CB2F0F625C7A01300E93B38 /* SafariView.swift in Sources */,
+				4C8EC54B25C885E90062C755 /* Feature+CoreDataProperties.swift in Sources */,
+				4CB2F0E325C786D200E93B38 /* HomeView.swift in Sources */,
+				4C8EC54825C885E90062C755 /* Hike+CoreDataClass.swift in Sources */,
+				4C5EB23025CFA96F0022CEDE /* SettingsButton.swift in Sources */,
+				4C7905D425CB451200AC7E2D /* FeaturePost.swift in Sources */,
+				4C5EB20125CF28E20022CEDE /* HikeDetailView.swift in Sources */,
+				4CB2F10425C7B07400E93B38 /* HikesView.swift in Sources */,
+				4CB2F10C25C7B08100E93B38 /* RecordView.swift in Sources */,
+				4C7905CF25CB450C00AC7E2D /* HikePost.swift in Sources */,
 				4CFD452A25C0E598009A94DE /* HikerNetApp.swift in Sources */,
+				4C6E5BC225F1F29C0046D5D0 /* ConnectivityManager.swift in Sources */,
+				4C5EB1DC25CDCEB00022CEDE /* IdResponse.swift in Sources */,
+				4C8EC54A25C885E90062C755 /* Feature+CoreDataClass.swift in Sources */,
+				4C5EB20925CF29830022CEDE /* HikeMapView.swift in Sources */,
+				4C5EB1FC25CE759E0022CEDE /* HikeItemView.swift in Sources */,
+				4CEEE1FE25C728DD00546EA3 /* OnboardingView.swift in Sources */,
+				4C8EC55125C8F91A0062C755 /* MeasureService.swift in Sources */,
+				4CEEE21725C7389400546EA3 /* OnboardingCarrierView.swift in Sources */,
 				4CFD453625C0E599009A94DE /* HikerNet.xcdatamodeld in Sources */,
+				4C5EB20E25CF3DE20022CEDE /* HikeCardView.swift in Sources */,
+				4C5EB1F225CE6C4A0022CEDE /* HikeResponse.swift in Sources */,
+				4C7905F125CC77C900AC7E2D /* TimeFormatter.swift in Sources */,
+				4CD150D825C67FBB0096397E /* Constants.swift in Sources */,
+				4CEEE21225C7388B00546EA3 /* OnboardingPrivacyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,10 +829,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelKoohang.HikerNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -528,10 +853,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelKoohang.HikerNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -664,9 +990,10 @@
 		4CFD453425C0E599009A94DE /* HikerNet.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				4C9BFFCD25E59EB1006F9C60 /* HikerNet 2.xcdatamodel */,
 				4CFD453525C0E599009A94DE /* HikerNet.xcdatamodel */,
 			);
-			currentVersion = 4CFD453525C0E599009A94DE /* HikerNet.xcdatamodel */;
+			currentVersion = 4C9BFFCD25E59EB1006F9C60 /* HikerNet 2.xcdatamodel */;
 			path = HikerNet.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
