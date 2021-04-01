@@ -4,8 +4,8 @@ import CoreTelephony
 
 struct OnboardingCarrierView: View {
     @Binding var carrierRetrieved: Bool
-    @State private var showingAlert: Bool = false
-    @State private var notificationTitle: String = "Your carrier: "
+    @State private var showAlert: Bool = false
+    @State private var notificationTitle: String = ""
     @State private var showNotification: Bool = false
     let haptics = UIImpactFeedbackGenerator(style: .medium)
     
@@ -23,16 +23,17 @@ struct OnboardingCarrierView: View {
                 HikerNetButton(title: "Get Carrier", disabled: carrierRetrieved) {
                     haptics.impactOccurred()
                     getCarrier()
-                }.disabled(carrierRetrieved)
+                }
                 LottieView(name: "checkmark", play: $carrierRetrieved, loop: false)
                     .frame(width: 75, height: 75)
                     .opacity(carrierRetrieved ? 1 : 0)
             }
-            .alert(isPresented: $showingAlert) {
+            .alert(isPresented: $showAlert) {
                 Alert(title: Text("Error"), message: Text("Could not retrieve your carrier. Please make sure you have a valid SIM card, your cellular plan is active, and you are connected to the Internet."), dismissButton: .default(Text("Ok")))
             }
             
             Spacer()
+            
             VStack() {
                 Text(notificationTitle)
                     .padding()
@@ -54,7 +55,7 @@ struct OnboardingCarrierView: View {
         var carriers: [String] = []
         
         guard let carrierInfo = networkInfo.serviceSubscriberCellularProviders else {
-            showingAlert = true
+            showAlert = true
             return
         }
         
@@ -68,13 +69,13 @@ struct OnboardingCarrierView: View {
         if (carriers.count == 1) {
             notificationTitle = "Your carrier: \(carriers[0])"
             withAnimation { showNotification = true }
-            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                 withAnimation { showNotification = false }
-            }
+            })
             UserDefaultsManager.setCarrier(carrier: carriers[0])
             carrierRetrieved = true
         } else {
-            showingAlert = true
+            showAlert = true
         }
     }
 }

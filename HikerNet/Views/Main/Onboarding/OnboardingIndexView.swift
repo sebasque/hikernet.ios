@@ -25,6 +25,6 @@ struct OnboardingIndexView: View {
 
 struct OnboardingIndexView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingIndexView(numberOfPages: 3, currentIndex: 0)
+        OnboardingIndexView(numberOfPages: 5, currentIndex: 0)
     }
 }
