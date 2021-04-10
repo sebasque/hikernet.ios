@@ -2,6 +2,7 @@
 import SwiftUI
 import SafariServices
 
+// MARK: Safari controller wrapper for SwiftUI
 struct SafariView: UIViewControllerRepresentable {
     @State var url: URL
 

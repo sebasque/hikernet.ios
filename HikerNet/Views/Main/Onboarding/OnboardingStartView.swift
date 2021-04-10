@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+// MARK: Onboarding start page
 struct OnboardingStartView: View {
     private let deviceHeight = UIScreen.main.bounds.height
     

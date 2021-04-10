@@ -1,7 +1,10 @@
 
 import SwiftUI
 
+// MARK: Last page for onboarding
 struct OnboardingEndView: View {
+    private let deviceHeight = UIScreen.main.bounds.height
+
     var body: some View {
         VStack(alignment: .leading) {
             Image("MountainSignal")
@@ -14,7 +17,7 @@ struct OnboardingEndView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.2, leading: 36, bottom: 0, trailing: 36))
+        .padding(EdgeInsets(top: deviceHeight * 0.3, leading: 36, bottom: 0, trailing: 36))
     }
 }
 

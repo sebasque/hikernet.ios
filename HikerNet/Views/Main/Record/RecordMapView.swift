@@ -3,11 +3,11 @@ import SwiftUI
 import Mapbox
 
 struct RecordMapView: UIViewRepresentable {
-    private let mapView: MGLMapView = MGLMapView(frame: .zero, styleURL: MGLStyle.outdoorsStyleURL)
-    @State var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D()
-    @State var firstTimeGettingLocation: Bool = true
-    @Binding var currentLocationButtonTapped: Bool
-    @Binding var backgroundLocationAuthorized: Bool
+    private let mapView = MGLMapView(frame: .zero, styleURL: MGLStyle.outdoorsStyleURL)
+    @State var currentLocation = CLLocationCoordinate2D()
+    @State var firstTimeGettingLocation = true
+    @Binding var locationButtonTapped: Bool
+    @Binding var locationAuthorized: Bool
     
     func makeUIView(context: UIViewRepresentableContext<RecordMapView>) -> MGLMapView {
         mapView.delegate = context.coordinator
@@ -18,10 +18,10 @@ struct RecordMapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MGLMapView, context: UIViewRepresentableContext<RecordMapView>) {
-        if(currentLocationButtonTapped) {
+        if (locationButtonTapped) {
             uiView.setCenter(currentLocation, zoomLevel: 16, direction: .zero, animated: true)
             uiView.showsUserLocation = true
-            currentLocationButtonTapped = false
+            locationButtonTapped = false
         }
     }
     
@@ -39,9 +39,9 @@ struct RecordMapView: UIViewRepresentable {
         func mapView(_ mapView: MGLMapView, didChangeLocationManagerAuthorization manager: MGLLocationManager) {
             switch (manager.authorizationStatus) {
             case .authorizedAlways:
-                control.backgroundLocationAuthorized = true
+                control.locationAuthorized = true
             default:
-                control.backgroundLocationAuthorized = false
+                control.locationAuthorized = false
             }
         }
         

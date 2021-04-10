@@ -3,16 +3,6 @@ import Foundation
 import SwiftUI
 import CoreData
 
-enum ApiError: Error {
-    case RequestError
-    case ServerError
-    case ConnectionError
-}
-
-enum ApiMessage {
-    case Success
-}
-
 // MARK: Manager for making API requests to the HikerNet server
 struct ApiManager {
     static private let API_URL = "\(Constants.apiUrl)/api"
@@ -92,9 +82,20 @@ struct ApiManager {
                 completion(.failure(.ConnectionError))
                 return
             }.resume()
+        } else {
+            completion(.success(.Empty))
         }
-        completion(.success(.Success))
     }
+}
 
+enum ApiError: Error {
+    case RequestError
+    case ServerError
+    case ConnectionError
+}
+
+enum ApiMessage {
+    case Success
+    case Empty
 }
 

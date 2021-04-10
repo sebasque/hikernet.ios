@@ -1,6 +1,5 @@
 
 struct HikePost: Codable {
-        
     var duration: Int
     var distance: Double
     var start: String

@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+// MARK: Standard UI button for settings page
 struct SettingsButton: View {
     @State var title: String
     @State var image: String

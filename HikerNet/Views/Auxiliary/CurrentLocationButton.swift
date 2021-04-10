@@ -1,12 +1,7 @@
-//
-//  CurrentLocationButton.swift
-//  HikerNet
-//
-//  Created by Michael Koohang on 1/31/21.
-//
 
 import SwiftUI
 
+// MARK: Current location button for MapView
 struct CurrentLocationButton: View {
     var action: () -> Void
     

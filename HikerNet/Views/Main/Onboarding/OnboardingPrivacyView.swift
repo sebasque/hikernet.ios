@@ -2,6 +2,7 @@
 import SwiftUI
 import SafariServices
 
+// MARK: Privacy page for onboarding
 struct OnboardingPrivacyView: View {
     @Binding var agreed: Bool
     @State private var showTerms = false

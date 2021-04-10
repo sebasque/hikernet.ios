@@ -1,12 +1,13 @@
 
 import CoreData
 
+// MARK: Manager for local cache of hike data
 struct DatabaseManager {
     static private let managedContext = PersistenceController.shared.container.viewContext
+    static private let isoFormatter = ISO8601DateFormatter()
     
     // Retrieve hikes from local storage
     static func getHikes() -> [HikePost] {
-        let isoFormatter = ISO8601DateFormatter()
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Hike")
         var hikesToUpload = [HikePost]()
         do {
@@ -22,7 +23,6 @@ struct DatabaseManager {
                     os: hike.wrappedOs,
                     features: []
                 )
-                var features = [FeaturePost]()
                 for feature in hike.featuresArray {
                     let newFeature = FeaturePost(
                         timestamp: isoFormatter.string(from: feature.wrappedTimestamp),
@@ -30,14 +30,14 @@ struct DatabaseManager {
                         network: feature.wrappedNetwork,
                         service: feature.wrappedService,
                         connected: feature.wrappedConnected,
+                        http: feature.wrappedHttp,
                         lat: feature.wrappedLat,
                         lon: feature.wrappedLon,
                         accuracy: feature.wrappedAccuracy,
                         speed: feature.wrappedSpeed
                     )
-                    features.append(newFeature)
+                    newHike.features.append(newFeature)
                 }
-                newHike.features = features
                 hikesToUpload.append(newHike)
             }
         } catch let error as NSError {

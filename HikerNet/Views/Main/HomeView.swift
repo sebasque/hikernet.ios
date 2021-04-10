@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+// MARK: Tab view
 struct HomeView: View {
     var body: some View {
         TabView {

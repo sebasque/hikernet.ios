@@ -1,30 +1,41 @@
 
 import SwiftUI
 
+// MARK: Connectivity bar showing how connected a certain hike is
 struct HikeConnectivityView: View {
     @State var hikes: [HikeResponse]
-    @State private var connected: Int = 100
+    @State private var connectivity = 100
     
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
-                HStack {
+                ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 5)
-                        .foregroundColor(connected >= 50 ? Constants.Colors.green : Color.red)
-                        // The 60 value is like a manually calculated padding space for the connectivity label to appear so it doesn't bleed off of the screen.
-                        .frame(width: (geometry.size.width - 60) * CGFloat(connected) / 100 , height: 10)
-                    Text("\(connected)%")
-                        .font(Font.custom(Constants.Fonts.medium, size: 17))
-                        .foregroundColor(connected >= 50 ? Constants.Colors.green : Color.red)
-                    Spacer()
+                        .foregroundColor(Color.red)
+                        .frame(width: geometry.size.width, height: 10)
+                    RoundedRectangle(cornerRadius: 5)
+                        .foregroundColor(Constants.Colors.green)
+                        .frame(width: geometry.size.width * CGFloat(connectivity) / 100 , height: 10)
                 }
-                Text("connectivity")
-                    .foregroundColor(.secondary)
-                    .font(Font.custom(Constants.Fonts.regular, size: 14))
+                HStack(alignment: .center) {
+                    Text("connectivity")
+                        .foregroundColor(.secondary)
+                        .font(Font.custom(Constants.Fonts.regular, size: 14))
+                    Spacer()
+                    Text("\(connectivity)%")
+                        .font(Font.custom(Constants.Fonts.medium, size: 17))
+                        .foregroundColor(connectivity >= 50 ? Constants.Colors.green : Color.red)
+                }
             }
         }
         .onAppear() {
-//            connected = ConnectivityManager.calcConnectivity(hikes: hikes)
+            connectivity = ConnectivityManager.calcConnectivity(hikes: hikes)
         }
+    }
+}
+
+struct HikeConnectivityView_Previews: PreviewProvider {
+    static var previews: some View {
+        HikeConnectivityView(hikes: [])
     }
 }
