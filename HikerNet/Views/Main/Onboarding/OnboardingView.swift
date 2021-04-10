@@ -1,12 +1,13 @@
 
 import SwiftUI
 
+// MARK: Main onboarding view for switching between pages
 struct OnboardingView: View {
-    @State private var numOfPages = 5
-    @State private var currentIndex = 0
+    @Binding var onboardingDone: Bool
+    @State var numOfPages = 5
+    @State var currentIndex = 0
     @State private var buttonTitle = "NEXT"
     @State private var buttonEnabled = true
-    @Binding var onboardingDone: Bool
     
     var body: some View {
         VStack {

@@ -1,14 +1,15 @@
 
 import SwiftUI
 
+// MARK: ID page for onboarding
 struct OnboardingIdView: View {
     @Binding var idRetrieved: Bool
-    @State private var showAlert: Bool = false
-    @State private var alertMessage: String = ""
-    @State private var notificationTitle: String = "Your ID: "
-    @State private var showNotification: Bool = false
-    @State private var gettingId: Bool = false
-    let haptics = UIImpactFeedbackGenerator(style: .medium)
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    @State private var notificationTitle = "Your ID: "
+    @State private var showNotification = false
+    @State private var gettingId = false
+    private let haptics = UIImpactFeedbackGenerator(style: .medium)
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -64,9 +65,9 @@ struct OnboardingIdView: View {
             case .success(let id):
                 notificationTitle = "Your ID: \(id)"
                 withAnimation { showNotification = true }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                     withAnimation { showNotification = false }
-                })
+                }
                 UserDefaultsManager.setId(id: id)
                 UserDefaultsManager.setOnboardingDone(done: true)
                 idRetrieved = true
@@ -82,10 +83,6 @@ struct OnboardingIdView: View {
                 showAlert = true
             }
             gettingId = false
-        }
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
-            print("TIMER DONE")
-            withAnimation { showNotification = false }
         }
     }
 }

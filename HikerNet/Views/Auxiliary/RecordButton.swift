@@ -1,12 +1,7 @@
-//
-//  RecordButton.swift
-//  HikerNet
-//
-//  Created by Michael Koohang on 1/31/21.
-//
 
 import SwiftUI
 
+// MARK: Record button for MapView
 struct RecordButton: View {
     var title: String
     var action: () -> Void

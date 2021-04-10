@@ -2,10 +2,11 @@
 import SwiftUI
 import Mapbox
 
+// MARK: Page for viewing connectivity of a hike and details
 struct HikeDetailView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var hike: HikeResponse
-    @State var annotations = [MGLPointAnnotation]()
+    @State private var annotations = [MGLPointAnnotation]()
     
     var body: some View {
         ZStack {
@@ -42,7 +43,7 @@ struct HikeDetailView: View {
     private func makeAnnotations() {
         for feature in hike.features {
             annotations.append(
-                MGLPointAnnotation(title: "\(feature.service)", coordinate: CLLocationCoordinate2D(latitude: feature.lon, longitude: feature.lat))
+                MGLPointAnnotation(title: "\(feature.http)", coordinate: CLLocationCoordinate2D(latitude: feature.lat, longitude: feature.lon))
             )
         }
     }

@@ -1,4 +1,5 @@
 
+import SwiftUI
 import CoreData
 import CoreLocation
 import CoreTelephony
@@ -6,27 +7,44 @@ import Network
 import UIKit
 
 class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
-    let managedContext = PersistenceController.shared.container.viewContext
+    
+    // Network monitor, database, and location update variables
+    let context = PersistenceController.shared.container.viewContext
     let networkMonitor = NWPathMonitor(requiredInterfaceType: .cellular)
     let queue = DispatchQueue(label: "HNNetworkMonitor")
     let locationManager = CLLocationManager()
     let measureInterval = 30
     
+    // Measurement variables
     var hike: Hike?
     var currentDate = Date()
     var currentLocation = CLLocation()
     var locationPoints = [CLLocation]()
     var firstLocationRequest = true
-    var connected = false
     var batteryLevel = 0
-
-    @Published var startTime = Date()
+    
+    static var recording = false
+    @Published var testInProgress = false
+    @Published var connected = false
     @Published var distance = 0.0
-    @Published var inService = false
-    @Published var saveInProgress = false
-    @Published var recording = false
-
-    override init() {
+    @Published var startTime = Date()
+    
+    // HTTP test
+    var http = false
+    let request: URLRequest = {
+        let url = URL(string: "https://www.google.com")
+        var r = URLRequest(url: url!)
+        r.httpMethod = "GET"
+        r.allowsCellularAccess = true
+        r.allowsConstrainedNetworkAccess = true
+        r.allowsExpensiveNetworkAccess = true
+        r.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        r.timeoutInterval = 10
+        return r
+    }()
+    
+    static let shared = MeasureService()
+    override private init() {
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -36,22 +54,23 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
         NotificationCenter.default.addObserver(self, selector: #selector(batterLevelDidChange), name: UIDevice.batteryLevelDidChangeNotification, object: nil)
         
         networkMonitor.pathUpdateHandler = { path in
-            self.connected = path.status == .satisfied
+            DispatchQueue.main.async {
+                self.connected = path.status == .satisfied
+            }
         }
-        networkMonitor.start(queue: queue)
+        networkMonitor.start(queue: DispatchQueue(label: "HNNetworkMonitor"))
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        if (recording && !(manager.authorizationStatus == .authorizedAlways)) {
+        if (MeasureService.recording && !(manager.authorizationStatus == .authorizedAlways)) {
             stopUpdates()
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        updateServiceState()
         if (firstLocationRequest) {
             currentLocation = locations.last!
-            currentDate = currentLocation.timestamp
+            currentDate = Date()
             firstLocationRequest = false
             saveFeature()
         } else if ((Int(currentDate.timeIntervalSinceNow.rounded()) * -1) >= measureInterval) {
@@ -64,28 +83,27 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     @objc func batterLevelDidChange() {
-        batteryLevel = Int(UIDevice.current.batteryLevel * 100)
+        batteryLevel = Int((UIDevice.current.batteryLevel * 100).rounded())
     }
     
     func startUpdates() {
-        recording = true
+        MeasureService.recording = true
         startHike()
         locationManager.startUpdatingLocation()
     }
     
     func stopUpdates() {
-        recording = false
+        MeasureService.recording = false
         stopHike()
         locationManager.stopUpdatingLocation()
     }
     
     func startHike() {
         startTime = Date()
-        batteryLevel = Int(UIDevice.current.batteryLevel * 100)
-        connected = networkMonitor.currentPath.status == .satisfied
+        batteryLevel = Int((UIDevice.current.batteryLevel * 100).rounded())
         
-        let entity = NSEntityDescription.entity(forEntityName: "Hike", in: managedContext)!
-        hike = Hike(entity: entity, insertInto: managedContext)
+        let entity = NSEntityDescription.entity(forEntityName: "Hike", in: context)!
+        hike = Hike(entity: entity, insertInto: context)
         hike!.setValue(startTime, forKey: "start")
         hike!.setValue(UserDefaultsManager.getCarrier(), forKey: "carrier")
         hike!.setValue("Apple", forKey: "manufacturer")
@@ -97,17 +115,10 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
     func stopHike() {
         updateHike()
         firstLocationRequest = true
-        locationPoints.removeAll()
+        batteryLevel = 0
+        connected = false
         distance = 0.0
-        
-        ApiManager.postHikes { res in
-            switch res {
-            case .success(.Success):
-                DatabaseManager.clearCache()
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
+        locationPoints.removeAll()
     }
     
     private func updateHike() {
@@ -120,57 +131,60 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     func saveFeature() {
-        saveInProgress = true
-
-        let entity = NSEntityDescription.entity(forEntityName: "Feature", in: managedContext)!
-        let feature = Feature(entity: entity, insertInto: managedContext)
+        testInProgress = true
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Feature", in: context)!
+        let feature = Feature(entity: entity, insertInto: context)
         
         feature.setValue(Date(), forKey: "timestamp")
         feature.setValue(Int16(batteryLevel), forKey: "battery")
         feature.setValue(getNetworkType(), forKey: "network")
-        feature.setValue(inService, forKey: "service")
-        feature.setValue(inService ? connected : false, forKey: "connected")
-        feature.setValue(currentLocation.coordinate.latitude, forKey: "lon")
-        feature.setValue(currentLocation.coordinate.longitude, forKey: "lat")
+        feature.setValue(getServiceState(), forKey: "service")
+        feature.setValue(connected, forKey: "connected")
+        feature.setValue(currentLocation.coordinate.latitude, forKey: "lat")
+        feature.setValue(currentLocation.coordinate.longitude, forKey: "lon")
         feature.setValue(currentLocation.horizontalAccuracy, forKey: "accuracy")
         feature.setValue(currentLocation.speed, forKey: "speed")
         feature.setValue(hike, forKey: "origin")
-        
-        saveContext()
-        saveInProgress = false
+
+        URLSession.shared.dataTask(with: request) { _, response, error in
+            DispatchQueue.main.async {
+                if let httpResponse = response as? HTTPURLResponse {
+                    self.http = httpResponse.statusCode == 200
+                    feature.setValue(self.http, forKey: "http")
+                    print("HTTP SUCCESS")
+                } else {
+                    self.http = false
+                    feature.setValue(self.http, forKey: "http")
+                    print("HTTP FAIL")
+                }
+                self.testInProgress = false
+                self.saveContext()
+            }
+        }.resume()
     }
-    
-    private func updateServiceState() {
-        inService = getServiceState()
-    }
-    
+
     private func updateDistance(location: CLLocation) {
         if (locationPoints.count > 0) {
-            distance += location.distance(from: locationPoints[locationPoints.count-1])
+            distance += location.distance(from: locationPoints.last!)
         }
         locationPoints.append(location)
     }
     
     private func saveContext() {
         do {
-            try managedContext.save()
+            try context.save()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
     }
-    
 }
 
 extension MeasureService {
-    
     private func getServiceState() -> Bool {
-        let carriers = CTTelephonyNetworkInfo().serviceSubscriberCellularProviders!
-        for (_, carrier) in carriers {
-            if carrier.carrierName != nil && carrier.mobileCountryCode != nil {
-                return true
-            }
-        }
-        return false
+        let networkInfo = CTTelephonyNetworkInfo()
+        let radioTech = networkInfo.serviceCurrentRadioAccessTechnology!
+        return radioTech.count > 0
     }
     
     private func getNetworkType() -> String {
@@ -192,45 +206,10 @@ extension MeasureService {
                 case CTRadioAccessTechnologyeHRPD: return Constants.RadioTech.EHRPD
                 case CTRadioAccessTechnologyNRNSA: return Constants.RadioTech.NRNSA
                 case CTRadioAccessTechnologyNR: return Constants.RadioTech.NR
-                default: return Constants.RadioTech.UKNOWN
+                default: return Constants.RadioTech.UNKNOWN
                 }
             }
         }
         return "NULL"
-    }
-    
-    private func printHikes(hikes: [HikePost]) {
-        var hikeCounter = 1
-        var featureCounter = 1
-        for hike in hikes {
-            print()
-            print("Hike #\(hikeCounter)")
-            print("-------------------------------------------------")
-            print("Carrier\t\t\t\t \(hike.carrier)")
-            print("Duration\t\t\t \(hike.duration) seconds")
-            print("Distance\t\t\t \(hike.distance) km")
-            print("Start Time\t\t\t \(hike.start)")
-            print("End Time\t\t\t \(hike.end)")
-            print("Manufacturer\t\t \(hike.manufacturer)")
-            print("OS Version\t\t\t \(hike.os)")
-            print()
-            hikeCounter += 1
-            for feature in hike.features {
-                print("Feature #\(featureCounter)")
-                print("--------------------")
-                print("Timestamp\t\t\t \(feature.timestamp)")
-                print("Battery\t\t\t\t \(feature.battery) %")
-                print("Network Type\t\t \(feature.network)")
-                print("Service State\t\t \(feature.service)")
-                print("Connected\t\t\t \(feature.connected)")
-                print("Latitude\t\t\t \(feature.lat)")
-                print("Longitude\t\t\t \(feature.lon)")
-                print("Speed\t\t\t\t \(feature.speed) m/s")
-                print("Accuracy\t\t\t \(feature.accuracy)")
-                print()
-                featureCounter += 1
-            }
-            featureCounter = 1
-        }
     }
 }

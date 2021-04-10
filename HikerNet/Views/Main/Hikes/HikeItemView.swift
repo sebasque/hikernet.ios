@@ -1,17 +1,19 @@
 
 import SwiftUI
 
+// MARK: Individual hike item in the recent activity list
 struct HikeItemView: View {
     @State var hike: HikeResponse
+    @State private var connectivity = 0
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(TimeFormatter.getLocalDateString(time: hike.start))
+                    Text(FormatManager.getLocalDateString(time: hike.start))
                         .foregroundColor(.secondary)
                         .font(Font.custom(Constants.Fonts.regular, size: 14))
-                    Text(TimeFormatter.getDayDescription(date: TimeFormatter.getLocalDate(time: hike.start)))
+                    Text(FormatManager.getDayDescription(date: FormatManager.getLocalDate(time: hike.start)))
                         .foregroundColor(.primary)
                         .font(Font.custom(Constants.Fonts.regular, size: 14))
                 }
@@ -21,15 +23,15 @@ struct HikeItemView: View {
             HStack {
                 HStack(alignment: .center, spacing: 32) {
                     VStack(alignment: .leading) {
-                        Text("\(ConnectivityManager.calcConnectivity(hikes: [hike]))%")
-                            .foregroundColor(ConnectivityManager.calcConnectivity(hikes: [hike]) >= 50 ? Constants.Colors.green : Color.red)
+                        Text("\(connectivity)%")
+                            .foregroundColor(connectivity >= 50 ? Constants.Colors.green : Color.red)
                             .font(Font.custom(Constants.Fonts.medium, size: 17))
                         Text("connectivity")
                             .foregroundColor(.secondary)
                             .font(Font.custom(Constants.Fonts.regular, size: 14))
                     }
                     VStack(alignment: .leading) {
-                        Text(String(format: "%.2f", arguments: [hike.distance]) + " km")
+                        Text(FormatManager.getDistance(distance: hike.distance))
                             .foregroundColor(.primary)
                             .font(Font.custom(Constants.Fonts.medium, size: 17))
                         Text("distance")
@@ -37,7 +39,7 @@ struct HikeItemView: View {
                             .font(Font.custom(Constants.Fonts.regular, size: 14))
                     }
                     VStack(alignment: .leading) {
-                        Text(TimeFormatter.getStopWatchTime(elapsedSeconds: hike.duration))
+                        Text(FormatManager.getStopWatchTime(elapsedSeconds: hike.duration))
                             .foregroundColor(.primary)
                             .font(Font.custom(Constants.Fonts.medium, size: 17))
                         Text("time")
@@ -54,5 +56,8 @@ struct HikeItemView: View {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .fill(Color(UIColor.secondarySystemBackground))
         )
+        .onAppear() {
+            connectivity = ConnectivityManager.calcConnectivity(hike: hike)
+        }
     }
 }

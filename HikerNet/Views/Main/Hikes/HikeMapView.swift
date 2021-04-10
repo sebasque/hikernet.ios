@@ -2,10 +2,11 @@
 import SwiftUI
 import Mapbox
 
+// MARK: Map view for hike details
 struct HikeMapView: UIViewRepresentable {
-    private let mapView: MGLMapView = MGLMapView(frame: .zero, styleURL: MGLStyle.outdoorsStyleURL)
     @Binding var annotations: [MGLPointAnnotation]
-    
+    private let mapView = MGLMapView(frame: .zero, styleURL: MGLStyle.outdoorsStyleURL)
+
     func makeUIView(context: UIViewRepresentableContext<HikeMapView>) -> MGLMapView {
         mapView.delegate = context.coordinator
         mapView.compassViewPosition = .bottomLeft
@@ -53,7 +54,7 @@ struct HikeMapView: UIViewRepresentable {
             if annotationView == nil {
                 annotationView = CustomAnnotationView(reuseIdentifier: reuseIdentifier)
                 annotationView!.bounds = CGRect(x: 0, y: 0, width: 15, height: 15)
-                annotationView!.backgroundColor = annotation.title == "1" ? UIColor(Constants.Colors.green) : UIColor.systemRed
+                annotationView!.backgroundColor = annotation.title == "1" ? UIColor(Constants.Colors.green) : .systemRed
             }
             return annotationView
         }

@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-// MARK: Standard button for HikerNet
+// MARK: Standard UI button
 struct HikerNetButton: View {
     var title: String
     var disabled: Bool
@@ -11,7 +11,7 @@ struct HikerNetButton: View {
         Button(action: action) {
             Text(title)
                 .padding()
-                .background(disabled ? Color(UIColor.systemGray3) : Constants.Colors.green)
+                .background(disabled ? Color(UIColor.systemGray4) : Constants.Colors.green)
                 .foregroundColor(.white)
                 .font(Font.custom(Constants.Fonts.semibold, size: 18))
                 .cornerRadius(15)

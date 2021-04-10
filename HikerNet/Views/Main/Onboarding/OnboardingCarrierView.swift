@@ -2,12 +2,13 @@
 import SwiftUI
 import CoreTelephony
 
+// MARK: Carrier page for onboarding
 struct OnboardingCarrierView: View {
     @Binding var carrierRetrieved: Bool
-    @State private var showAlert: Bool = false
-    @State private var notificationTitle: String = ""
-    @State private var showNotification: Bool = false
-    let haptics = UIImpactFeedbackGenerator(style: .medium)
+    @State private var showAlert = false
+    @State private var notificationTitle = ""
+    @State private var showNotification = false
+    private let haptics = UIImpactFeedbackGenerator(style: .medium)
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -34,7 +35,7 @@ struct OnboardingCarrierView: View {
             
             Spacer()
             
-            VStack() {
+            VStack {
                 Text(notificationTitle)
                     .padding()
                     .frame(maxHeight: 50)
@@ -69,9 +70,9 @@ struct OnboardingCarrierView: View {
         if (carriers.count == 1) {
             notificationTitle = "Your carrier: \(carriers[0])"
             withAnimation { showNotification = true }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 withAnimation { showNotification = false }
-            })
+            }
             UserDefaultsManager.setCarrier(carrier: carriers[0])
             carrierRetrieved = true
         } else {
