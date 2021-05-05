@@ -115,10 +115,13 @@ struct HikesView: View {
     private func uploadHikes() {
         ApiManager.postHikes { res in
             switch res {
-            case .success(.Success):
-                DatabaseManager.clearCache()
-            case .success(.Empty):
-                print("Database empty")
+            case .success(let res):
+                switch res {
+                case .Success:
+                    DatabaseManager.clearCache()
+                case .Empty:
+                    print("Database empty")
+                }
             case .failure(let err):
                 print(err.localizedDescription)
             }

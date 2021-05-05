@@ -58,7 +58,6 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
                 self.connected = path.status == .satisfied
             }
         }
-        networkMonitor.start(queue: DispatchQueue(label: "HNNetworkMonitor"))
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -90,6 +89,7 @@ class MeasureService: NSObject, CLLocationManagerDelegate, ObservableObject {
         MeasureService.recording = true
         startHike()
         locationManager.startUpdatingLocation()
+        networkMonitor.start(queue: queue)
     }
     
     func stopUpdates() {
@@ -192,21 +192,38 @@ extension MeasureService {
         let radioTech = networkInfo.serviceCurrentRadioAccessTechnology!
         if radioTech.count > 0 {
             for (_, val) in radioTech {
-                switch(val) {
-                case CTRadioAccessTechnologyLTE: return Constants.RadioTech.LTE
-                case CTRadioAccessTechnologyGPRS: return Constants.RadioTech.GPRS
-                case CTRadioAccessTechnologyCDMA1x: return Constants.RadioTech.CDMA1x
-                case CTRadioAccessTechnologyEdge: return Constants.RadioTech.EDGE
-                case CTRadioAccessTechnologyWCDMA: return Constants.RadioTech.WCDMA
-                case CTRadioAccessTechnologyHSDPA: return Constants.RadioTech.HSDPA
-                case CTRadioAccessTechnologyHSUPA: return Constants.RadioTech.HSUPA
-                case CTRadioAccessTechnologyCDMAEVDORev0: return Constants.RadioTech.CDMAEVDOREV0
-                case CTRadioAccessTechnologyCDMAEVDORevA: return Constants.RadioTech.CDMAEVDOREVA
-                case CTRadioAccessTechnologyCDMAEVDORevB: return Constants.RadioTech.CDMAEVDOREVB
-                case CTRadioAccessTechnologyeHRPD: return Constants.RadioTech.EHRPD
-                case CTRadioAccessTechnologyNRNSA: return Constants.RadioTech.NRNSA
-                case CTRadioAccessTechnologyNR: return Constants.RadioTech.NR
-                default: return Constants.RadioTech.UNKNOWN
+                if #available(iOS 14.1, *) {
+                    switch(val) {
+                    case CTRadioAccessTechnologyLTE: return Constants.RadioTech.LTE
+                    case CTRadioAccessTechnologyGPRS: return Constants.RadioTech.GPRS
+                    case CTRadioAccessTechnologyCDMA1x: return Constants.RadioTech.CDMA1x
+                    case CTRadioAccessTechnologyEdge: return Constants.RadioTech.EDGE
+                    case CTRadioAccessTechnologyWCDMA: return Constants.RadioTech.WCDMA
+                    case CTRadioAccessTechnologyHSDPA: return Constants.RadioTech.HSDPA
+                    case CTRadioAccessTechnologyHSUPA: return Constants.RadioTech.HSUPA
+                    case CTRadioAccessTechnologyCDMAEVDORev0: return Constants.RadioTech.CDMAEVDOREV0
+                    case CTRadioAccessTechnologyCDMAEVDORevA: return Constants.RadioTech.CDMAEVDOREVA
+                    case CTRadioAccessTechnologyCDMAEVDORevB: return Constants.RadioTech.CDMAEVDOREVB
+                    case CTRadioAccessTechnologyeHRPD: return Constants.RadioTech.EHRPD
+                    case CTRadioAccessTechnologyNRNSA: return Constants.RadioTech.NRNSA
+                    case CTRadioAccessTechnologyNR: return Constants.RadioTech.NR
+                    default: return Constants.RadioTech.UNKNOWN
+                    }
+                } else {
+                    switch(val) {
+                    case CTRadioAccessTechnologyLTE: return Constants.RadioTech.LTE
+                    case CTRadioAccessTechnologyGPRS: return Constants.RadioTech.GPRS
+                    case CTRadioAccessTechnologyCDMA1x: return Constants.RadioTech.CDMA1x
+                    case CTRadioAccessTechnologyEdge: return Constants.RadioTech.EDGE
+                    case CTRadioAccessTechnologyWCDMA: return Constants.RadioTech.WCDMA
+                    case CTRadioAccessTechnologyHSDPA: return Constants.RadioTech.HSDPA
+                    case CTRadioAccessTechnologyHSUPA: return Constants.RadioTech.HSUPA
+                    case CTRadioAccessTechnologyCDMAEVDORev0: return Constants.RadioTech.CDMAEVDOREV0
+                    case CTRadioAccessTechnologyCDMAEVDORevA: return Constants.RadioTech.CDMAEVDOREVA
+                    case CTRadioAccessTechnologyCDMAEVDORevB: return Constants.RadioTech.CDMAEVDOREVB
+                    case CTRadioAccessTechnologyeHRPD: return Constants.RadioTech.EHRPD
+                    default: return Constants.RadioTech.UNKNOWN
+                    }
                 }
             }
         }
