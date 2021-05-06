@@ -2,8 +2,9 @@
 import SwiftUI
 import SafariServices
 
+// MARK: Safari controller wrapper for SwiftUI
 struct SafariView: UIViewControllerRepresentable {
-    let url: URL
+    @State var url: URL
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
         return SFSafariViewController(url: url)

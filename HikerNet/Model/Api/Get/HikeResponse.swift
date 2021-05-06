@@ -1,6 +1,5 @@
 
 struct HikeResponse: Codable, Identifiable {
-        
     var id: Int
     var duration: Int
     var distance: Double
@@ -9,8 +8,6 @@ struct HikeResponse: Codable, Identifiable {
     var carrier: String
     var manufacturer: String
     var os: String
-    var deviceId: Int
-    var notes: String?
     var features: [FeatureResponse]
     
     enum CodingKeys: String, CodingKey {
@@ -22,8 +19,6 @@ struct HikeResponse: Codable, Identifiable {
         case carrier
         case manufacturer
         case os
-        case deviceId = "device_id"
-        case notes
         case features
     }
 }

@@ -1,12 +1,13 @@
 
 import SwiftUI
 
+// MARK: Main onboarding view for switching between pages
 struct OnboardingView: View {
-    @State private var numOfPages = 5
-    @State private var currentIndex = 0
+    @Binding var onboardingDone: Bool
+    @State var numOfPages = 5
+    @State var currentIndex = 0
     @State private var buttonTitle = "NEXT"
     @State private var buttonEnabled = true
-    @Binding var onboardingDone: Bool
     
     var body: some View {
         VStack {
@@ -14,7 +15,7 @@ struct OnboardingView: View {
               ForEach(0..<numOfPages, id: \.self) { index in
                 switch(index) {
                     case 1:
-                        OnboardingPrivacyView(privacyAgreed: $buttonEnabled)
+                        OnboardingPrivacyView(agreed: $buttonEnabled)
                     case 2:
                         OnboardingCarrierView(carrierRetrieved: $buttonEnabled)
                     case 3:
@@ -61,7 +62,7 @@ struct OnboardingView: View {
                     }
                 }) {
                     Text(buttonTitle)
-                        .foregroundColor(buttonEnabled ? Constants.Colors.green : Color.secondary)
+                        .foregroundColor(buttonEnabled ? Constants.Colors.green : .secondary)
                         .font(Font.custom(Constants.Fonts.semibold, size: 18))
                         .cornerRadius(15)
                 }

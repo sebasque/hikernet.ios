@@ -1,21 +1,17 @@
 
 import SwiftUI
 
+// MARK: Progress dots for onboarding
 struct OnboardingIndexView: View {
-    let numberOfPages: Int
-    let currentIndex: Int
-        
-    private let circleSize: CGFloat = 8
-    private let circleSpacing: CGFloat = 12
-    private let primaryColor = Color(UIColor.label)
-    private let secondaryColor = Color(UIColor.systemGray5)
-    
+    var numberOfPages: Int
+    var currentIndex: Int
+            
     var body: some View {
-        HStack(spacing: circleSpacing) {
+        HStack(spacing: 12) {
             ForEach(0..<numberOfPages) { index in
               Circle()
-                .fill(currentIndex >= index ? primaryColor : secondaryColor)
-                .frame(width: circleSize, height: circleSize)
+                .fill(currentIndex >= index ? .primary : Color(UIColor.systemGray5))
+                .frame(width: 8, height: 8)
                 .transition(AnyTransition.opacity.combined(with: .scale))
                 .id(index)
             }
@@ -25,6 +21,6 @@ struct OnboardingIndexView: View {
 
 struct OnboardingIndexView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingIndexView(numberOfPages: 3, currentIndex: 0)
+        OnboardingIndexView(numberOfPages: 5, currentIndex: 0)
     }
 }

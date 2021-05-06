@@ -4,31 +4,31 @@ import SwiftUI
 import Mapbox
 
 struct RecordView: View {
-    @ObservedObject var measureService = MeasureService()
-    @State var backgroundLocationAuthorized: Bool = false
-    @State var currentLocationButtonTapped: Bool = false
-    @State var showingTestInProgressAlert: Bool = false
+    @ObservedObject private var measureService = MeasureService.shared
+    @State private var locationAuthorized = false
+    @State private var locationButtonTapped = false
+    @State private var showAlert = false
     
-    let haptics = UIImpactFeedbackGenerator(style: .medium)
-    let testInProgressTitle = "Test in Progress"
-    let testInProgressMessage = "We're still testing your connection. Wait a few more seconds and try again."
+    private let haptics = UIImpactFeedbackGenerator(style: .medium)
+    private let alertTitle = "Test in Progress"
+    private let alertMessage = "We're still testing your connection. Wait a few more seconds and try again."
 
     var body: some View {
         ZStack {
             RecordMapView(
                 currentLocation: CLLocationCoordinate2D(),
                 firstTimeGettingLocation: true,
-                currentLocationButtonTapped: $currentLocationButtonTapped,
-                backgroundLocationAuthorized: $backgroundLocationAuthorized
+                locationButtonTapped: $locationButtonTapped,
+                locationAuthorized: $locationAuthorized
             )
             .ignoresSafeArea(.all, edges: .top)
-            .opacity(backgroundLocationAuthorized ? 1 : 0)
-            if backgroundLocationAuthorized {
+            .opacity(locationAuthorized ? 1 : 0)
+            if locationAuthorized {
                 VStack {
                     HStack(alignment: .center) {
                         VStack(alignment: .leading) {
                             ZStack(alignment: .center) {
-                                Text(TimeFormatter.getStopWatchTime(elapsedSeconds: Int(measureService.startTime.timeIntervalSinceNow.rounded() * -1)))
+                                Text(FormatManager.getStopWatchTime(elapsedSeconds: Int(measureService.startTime.timeIntervalSinceNow.rounded() * -1)))
                                     .foregroundColor(.primary)
                                     .font(Font.custom(Constants.Fonts.medium, size: 28))
                                     .padding(EdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14))
@@ -38,10 +38,10 @@ struct RecordView: View {
                                             .shadow(radius: 5)
                                             .frame(minHeight: 50)
                                     )
-                                    .opacity(measureService.recording ? 1.0 : 0.0)
+                                    .opacity(MeasureService.recording ? 1.0 : 0.0)
                             }
                             ZStack(alignment: .center) {
-                                Text(String(format: "%.2f", measureService.distance/1000) + " km")
+                                Text(FormatManager.getDistance(distance: measureService.distance/1000))
                                     .foregroundColor(.primary)
                                     .font(Font.custom(Constants.Fonts.medium, size: 28))
                                     .padding(EdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14))
@@ -51,11 +51,11 @@ struct RecordView: View {
                                             .shadow(radius: 5)
                                             .frame(minHeight: 50)
                                     )
-                                    .opacity(measureService.recording ? 1.0 : 0.0)
+                                    .opacity(MeasureService.recording ? 1.0 : 0.0)
                             }
                             ZStack(alignment: .center) {
-                                Image(systemName: "antenna.radiowaves.left.and.right")
-                                    .foregroundColor(measureService.inService ? Constants.Colors.green : Color.red)
+                                Image(systemName: "wifi")
+                                    .foregroundColor(measureService.connected ? Constants.Colors.green : Color.red)
                                     .font(Font.custom(Constants.Fonts.medium, size: 28))
                                     .padding(EdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14))
                                     .background(
@@ -64,30 +64,29 @@ struct RecordView: View {
                                             .shadow(radius: 5)
                                             .frame(minHeight: 50)
                                     )
-                                    .opacity(measureService.recording ? 1.0 : 0.0)
+                                    .opacity(MeasureService.recording ? 1.0 : 0.0)
                             }
                         }.padding()
                         Spacer()
                     }
-                    
                     Spacer()
                     ZStack {
                         Spacer()
-                        RecordButton(title: !measureService.recording ? "START" : "STOP") {
-                            if (!measureService.recording) {
+                        RecordButton(title: !MeasureService.recording ? "START" : "STOP") {
+                            if (!MeasureService.recording) {
                                 measureService.startUpdates()
                                 AudioServicesPlayAlertSound(SystemSoundID(1115))
                             } else {
-                                if (!measureService.saveInProgress) {
+                                if (!measureService.testInProgress) {
                                     measureService.stopUpdates()
                                     AudioServicesPlayAlertSound(SystemSoundID(1116))
                                 } else {
-                                    showingTestInProgressAlert = true
+                                    showAlert = true
                                 }
                             }
                         }
                         CurrentLocationButton {
-                            currentLocationButtonTapped = true
+                            locationButtonTapped = true
                             haptics.impactOccurred()
                         }
                         .padding(EdgeInsets(top: 0, leading: 200, bottom: 0, trailing: 0))
@@ -95,14 +94,14 @@ struct RecordView: View {
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 24, trailing: 0))
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                .alert(isPresented: $showingTestInProgressAlert) {
-                    Alert(title: Text(testInProgressTitle), message: Text(testInProgressMessage), dismissButton: .default(Text("Ok")))
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("Ok")))
                 }
             } else {
                 VStack(alignment: .leading) {
-                    Text("Background Location Needed")
+                    Text("Permissions")
                         .foregroundColor(.primary)
-                        .font(Font.custom(Constants.Fonts.medium, size: 36))
+                        .font(Font.custom(Constants.Fonts.medium, size: 28))
                     Text("Background location is needed for HikerNet to measure connectivity while your phone is locked. Change your location setting to 'Always' to enable background location.")
                         .foregroundColor(.secondary)
                         .font(Font.custom(Constants.Fonts.regular, size: 18))
@@ -116,7 +115,7 @@ struct RecordView: View {
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                .padding(EdgeInsets(top: 24, leading: 36, bottom: 0, trailing: 36))
+                .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
             }
         }
     }

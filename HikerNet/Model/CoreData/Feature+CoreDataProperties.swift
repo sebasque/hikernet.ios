@@ -20,6 +20,7 @@ extension Feature {
     @NSManaged public var battery: Int16
     @NSManaged public var service: Bool
     @NSManaged public var connected: Bool
+    @NSManaged public var http: Bool
     @NSManaged public var lat: Double
     @NSManaged public var lon: Double
     @NSManaged public var network: String?
@@ -45,6 +46,10 @@ extension Feature {
     
     var wrappedConnected: Bool {
         connected
+    }
+    
+    var wrappedHttp: Bool {
+        http
     }
     
     var wrappedLat: Double {

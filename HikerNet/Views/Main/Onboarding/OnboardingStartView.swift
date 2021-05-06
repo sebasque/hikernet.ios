@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+// MARK: Onboarding start page
 struct OnboardingStartView: View {
     private let deviceHeight = UIScreen.main.bounds.height
     
@@ -16,7 +17,7 @@ struct OnboardingStartView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .padding(EdgeInsets(top: deviceHeight * 0.2, leading: 36, bottom: 0, trailing: 36))
+        .padding(EdgeInsets(top: deviceHeight * 0.3, leading: 36, bottom: 0, trailing: 36))
     }
 }
 

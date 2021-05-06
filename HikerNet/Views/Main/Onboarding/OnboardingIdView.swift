@@ -1,13 +1,15 @@
 
 import SwiftUI
 
+// MARK: ID page for onboarding
 struct OnboardingIdView: View {
     @Binding var idRetrieved: Bool
-    @State private var showingAlert: Bool = false
-    @State private var alertMessage: String = ""
-    @State private var notificationTitle: String = "Your carrier: "
-    @State private var showNotification: Bool = false
-    let haptics = UIImpactFeedbackGenerator(style: .medium)
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    @State private var notificationTitle = "Your ID: "
+    @State private var showNotification = false
+    @State private var gettingId = false
+    private let haptics = UIImpactFeedbackGenerator(style: .medium)
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,37 +23,19 @@ struct OnboardingIdView: View {
             
             HStack {
                 HikerNetButton(title: "Get ID", disabled: idRetrieved) {
-                    haptics.impactOccurred()
-                    ApiManager.getId { res in
-                        switch res {
-                        case .success(let id):
-                            notificationTitle = "Your ID: \(id)"
-                            withAnimation { showNotification = true }
-                            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
-                                withAnimation { showNotification = false }
-                            }
-                            UserDefaultsManager.setId(id: id)
-                            UserDefaultsManager.setOnboardingDone(done: true)
-                            idRetrieved = true
-                        case .failure(let err):
-                            switch err {
-                            case ApiError.RequestError:
-                                alertMessage = "There was problem with the request. Please try again later."
-                            case ApiError.ServerError:
-                                alertMessage = "There was problem with our servers. Please try again later."
-                            case ApiError.ConnectionError:
-                                alertMessage = "There was a problem with the internet connection. Please try again later."
-                            }
-                            showingAlert = true
-                        }
-                    }
+                    getId()
+                }
+                if gettingId {
+                    LottieView(name: "loading", play: $gettingId, loop: false)
+                        .frame(width: 75, height: 75)
                 }
                 LottieView(name: "checkmark", play: $idRetrieved, loop: false)
                     .frame(width: 75, height: 75)
-                    .opacity(idRetrieved ? 1 : 0)
+                    .opacity(idRetrieved ? 1.0 : 0)
+                
             }
             .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
-            .alert(isPresented: $showingAlert) {
+            .alert(isPresented: $showAlert) {
                 Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("Ok")))
             }
             
@@ -71,6 +55,35 @@ struct OnboardingIdView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .padding(EdgeInsets(top: 24, leading: 36, bottom: 0, trailing: 36))
 
+    }
+    
+    private func getId() {
+        haptics.impactOccurred()
+        gettingId = true
+        ApiManager.getId { res in
+            switch res {
+            case .success(let id):
+                notificationTitle = "Your ID: \(id)"
+                withAnimation { showNotification = true }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    withAnimation { showNotification = false }
+                }
+                UserDefaultsManager.setId(id: id)
+                UserDefaultsManager.setOnboardingDone(done: true)
+                idRetrieved = true
+            case .failure(let err):
+                switch err {
+                case ApiError.RequestError:
+                    alertMessage = "There was problem with the request. Please try again later."
+                case ApiError.ServerError:
+                    alertMessage = "There was problem with our servers. Please try again later."
+                case ApiError.ConnectionError:
+                    alertMessage = "There was a problem with the internet connection. Please try again later."
+                }
+                showAlert = true
+            }
+            gettingId = false
+        }
     }
 }
 

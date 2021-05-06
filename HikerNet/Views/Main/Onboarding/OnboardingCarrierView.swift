@@ -2,12 +2,13 @@
 import SwiftUI
 import CoreTelephony
 
+// MARK: Carrier page for onboarding
 struct OnboardingCarrierView: View {
     @Binding var carrierRetrieved: Bool
-    @State private var showingAlert: Bool = false
-    @State private var notificationTitle: String = "Your carrier: "
-    @State private var showNotification: Bool = false
-    let haptics = UIImpactFeedbackGenerator(style: .medium)
+    @State private var showAlert = false
+    @State private var notificationTitle = ""
+    @State private var showNotification = false
+    private let haptics = UIImpactFeedbackGenerator(style: .medium)
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,17 +24,18 @@ struct OnboardingCarrierView: View {
                 HikerNetButton(title: "Get Carrier", disabled: carrierRetrieved) {
                     haptics.impactOccurred()
                     getCarrier()
-                }.disabled(carrierRetrieved)
+                }
                 LottieView(name: "checkmark", play: $carrierRetrieved, loop: false)
                     .frame(width: 75, height: 75)
                     .opacity(carrierRetrieved ? 1 : 0)
             }
-            .alert(isPresented: $showingAlert) {
+            .alert(isPresented: $showAlert) {
                 Alert(title: Text("Error"), message: Text("Could not retrieve your carrier. Please make sure you have a valid SIM card, your cellular plan is active, and you are connected to the Internet."), dismissButton: .default(Text("Ok")))
             }
             
             Spacer()
-            VStack() {
+            
+            VStack {
                 Text(notificationTitle)
                     .padding()
                     .frame(maxHeight: 50)
@@ -54,7 +56,7 @@ struct OnboardingCarrierView: View {
         var carriers: [String] = []
         
         guard let carrierInfo = networkInfo.serviceSubscriberCellularProviders else {
-            showingAlert = true
+            showAlert = true
             return
         }
         
@@ -68,13 +70,13 @@ struct OnboardingCarrierView: View {
         if (carriers.count == 1) {
             notificationTitle = "Your carrier: \(carriers[0])"
             withAnimation { showNotification = true }
-            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 withAnimation { showNotification = false }
             }
             UserDefaultsManager.setCarrier(carrier: carriers[0])
             carrierRetrieved = true
         } else {
-            showingAlert = true
+            showAlert = true
         }
     }
 }
