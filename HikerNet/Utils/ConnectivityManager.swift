@@ -14,9 +14,7 @@ struct ConnectivityManager {
                 }
             }
         }
-        var result = connectedPercentage / featureCount * 100
-        result.round(.toNearestOrAwayFromZero)
-        return Int(result)
+        return round(part: connectedPercentage, whole: featureCount)
     }
     
     // Calculate connectivity for a single hike
@@ -29,7 +27,11 @@ struct ConnectivityManager {
                 connectedPercentage += 1
             }
         }
-        var result = connectedPercentage / featureCount * 100
+        return round(part: connectedPercentage, whole: featureCount)
+    }
+    
+    private static func round(part: Double, whole: Double) -> Int {
+        var result = part / whole * 100
         result.round(.toNearestOrAwayFromZero)
         return Int(result)
     }
