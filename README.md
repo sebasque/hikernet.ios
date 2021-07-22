@@ -23,6 +23,7 @@ HikerNet is pretty simple. When you're ready to go on a hike, you open the app, 
 ## Acknowledgements
 
 * [Mapbox](https://www.mapbox.com)
+* [Lottie](https://airbnb.design/lottie/)
 
 [record-screenshot]: Images/hikernet-record-ss.png
 [hikes-screenshot]: Images/hikernet-hikes-ss.png
