@@ -14,6 +14,7 @@ HikerNet is pretty simple. When you're ready to go on a hike, you open the app, 
 
 ## Built with
 
+* [Swift](https://swift.org)
 * [SwiftUI](https://developer.apple.com/documentation/swiftui)
 * [Core Location](https://developer.apple.com/documentation/corelocation)
 * [Core Data](https://developer.apple.com/documentation/coredata)
