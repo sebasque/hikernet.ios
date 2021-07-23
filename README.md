@@ -20,9 +20,6 @@ HikerNet is pretty simple. When you're ready to go on a hike, you open the app, 
 * [Core Data](https://developer.apple.com/documentation/coredata)
 * [Core Telephony](https://developer.apple.com/documentation/coretelephony)
 * [Network](https://developer.apple.com/documentation/network)
-
-## Acknowledgements
-
 * [Mapbox](https://www.mapbox.com)
 * [Lottie](https://airbnb.design/lottie/)
 
